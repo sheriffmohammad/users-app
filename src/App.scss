@@ -1,12 +1,16 @@
 /* Standard variables*/
-$primary: #0000ff;
-$secondary: #aaaaaa;
-$tertiary: #fff;
-$quaternary: #000;
+$primary: #0055bf;
+$secondary: #000e4f;
+$tertiary: #000;
+$quaternary: #fff;
 $fontSize: 1rem;
 
 /* App styles */
+* {
+    box-sizing: border-box;
+}
 body {
     font-size: $fontSize;
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }

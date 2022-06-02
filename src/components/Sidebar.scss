@@ -1,0 +1,26 @@
+@import "../App.scss";
+
+.side-bar {
+    height: 100vh;
+    background-color: $secondary;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    cursor: pointer;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    background-color: $quaternary;
+    border-radius: 100%;
+    padding: 0.5rem;
+    border: 2px solid $tertiary;
+}
+.open{
+    width: 20rem;
+}
+.closed{
+    width: 5rem;
+}

@@ -1,4 +1,6 @@
 import React from 'react'
+import Sidebar from './Sidebar';
+import './Layout.scss'
 
 type Props = {
     pageTitle: string,
@@ -7,19 +9,15 @@ type Props = {
 
 const Layout = ({ pageTitle, children }: Props) => {
     return (
-        <div>
+        <div className='layout'>
 
-            {/* Dynamic Page Title */}
-            <title>{pageTitle}</title>
-
-            {/* Navigation */}
-            <nav>
-                <ul>
-                </ul>
-            </nav>
+            <Sidebar></Sidebar>
 
             {/* Main Content */}
             <main>
+
+                {/* Dynamic Page Title */}
+                <title>{pageTitle}</title>
 
                 <h1>{pageTitle}</h1>
 
