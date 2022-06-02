@@ -20,8 +20,11 @@
     border: 2px solid $tertiary;
 }
 .open{
-    width: 20rem;
+    width: 22rem;
 }
 .closed{
-    width: 5rem;
+    width: 7rem;
+}
+.rotate-180{
+    transform: rotate(180deg);
 }

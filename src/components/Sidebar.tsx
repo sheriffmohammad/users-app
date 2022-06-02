@@ -8,7 +8,7 @@ export default function Sidebar() {
             <div className={'side-bar ' + `${open ? 'open' : 'closed'}`}>
 
                 {/* Arrow */}
-                <img onClick={() => setOpen(!open)} src="/assets/images/side-bar-arrow.png" className='arrow' />
+                <img onClick={() => setOpen(!open)} src="/assets/images/side-bar-arrow.png" className={`arrow ${!open && 'rotate-180'}`} />
                 Test
             </div>
         </div >
