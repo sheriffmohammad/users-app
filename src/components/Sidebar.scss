@@ -5,6 +5,18 @@
     background-color: $secondary;
     position: relative;
     transition-duration: 300ms;
+    padding: 1rem;
+    padding-top: 1.5rem;
+}
+
+.side-bar-header {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.icon {
+    width: 2rem;
 }
 
 .arrow {
@@ -14,17 +26,16 @@
     top: 50%;
     transform: translateY(-50%);
     width: 2rem;
-    background-color: $quaternary;
     border-radius: 100%;
     padding: 0.5rem;
     border: 2px solid $tertiary;
 }
-.open{
+.open {
     width: 22rem;
 }
-.closed{
+.closed {
     width: 7rem;
 }
-.rotate-180{
+.rotate-180 {
     transform: rotate(180deg);
 }
