@@ -14,3 +14,27 @@ body {
     margin: 0;
     padding: 0;
 }
+.bg-primary{
+    background-color: $primary;
+}
+.bg-secondary{
+    background-color: $secondary;
+}
+.bg-tertiary{
+    background-color: $tertiary;
+}
+.bg-quaternary{
+    background-color: $quaternary;
+}
+.text-primary{
+    color: $primary;
+}
+.text-secondary{
+    color: $secondary;
+}
+.text-tertiary{
+    color: $tertiary;
+}
+.text-quaternary{
+    color: $quaternary;
+}
