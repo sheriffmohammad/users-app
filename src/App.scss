@@ -2,18 +2,20 @@
 $primary: #0055bf;
 $secondary: #000e4f;
 $tertiary: #bcceff;
-$quaternary: #fff;
+$quaternary: #f1f5f9;
 $fontSize: 1rem;
 /*#endregion*/
 
 /*#region Generic App styles */
 * {
     box-sizing: border-box;
+    font-family: Arial;
 }
 body {
     font-size: $fontSize;
     margin: 0;
     padding: 0;
+    background-color: $quaternary;
 }
 ul {
     list-style-type: none;
@@ -24,6 +26,13 @@ span {
 }
 a {
     text-decoration: none;
+}
+h1,
+h2 {
+    font-family: Arial black;
+}
+h1 {
+    margin: 0;
 }
 /*#endregion */
 

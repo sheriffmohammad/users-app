@@ -1,0 +1,13 @@
+@import "../App.scss";
+
+@mixin page-padding {
+    padding: 4rem 3rem;
+}
+
+.page-header {
+    background-color: white;
+    @include page-padding;
+}
+.page-content {
+    @include page-padding;
+}

@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<App />} />
           <Route index element={<Page pageTitle='Home'><Home /></Page>} />
           <Route path="log-in" element={<Page pageTitle="Log In"><LogIn /></Page>} />
-          <Route path="register" element={<Page pageTitle='Register'><Register /></Page>} />
+          <Route path="register" element={<Page pageTitle='Registration'><Register /></Page>} />
         </Routes>
       </Layout>
     </BrowserRouter>

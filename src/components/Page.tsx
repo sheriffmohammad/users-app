@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import './Page.scss';
 
 type Props = {
     pageTitle: string,
@@ -11,8 +12,14 @@ const Page = ({ pageTitle, children }: Props) => {
     }, [pageTitle]);
     return (
         <div>
-            <h1>{pageTitle} Page</h1>
-            {children}
+            <div className="page-header text-black">
+
+                <h1>{pageTitle} Page</h1>
+            </div>
+            <div className="page-content">
+
+                {children}
+            </div>
         </div>
     )
 };
