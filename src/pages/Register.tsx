@@ -6,18 +6,18 @@ export default function Register() {
         <section>
             <div className="register">
                 <div className="col-1">
-                    <h2>Sign In</h2>
+                    <h2>Register</h2>
 
                     <form id='form' className='flex flex-col'>
                         <input type="text" placeholder='username' />
                         <input type="text" placeholder='password' />
                         <input type="text" placeholder='confirm password' />
-                        <button className='btn'>Sign In</button>
+                        <button className='btn'>Register</button>
                     </form>
 
                 </div>
                 <div className="col-2">
-                    <img src='assets/images/bg-form.jpg' alt="" />
+                    <img src='assets/images/bg-form-2.jpg' alt="" />
                 </div>
             </div>
         </section>
