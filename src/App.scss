@@ -36,6 +36,22 @@ h2 {
 h1 {
     margin: 0;
 }
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: $tertiary;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a1b2e3;
+}
 /*#endregion */
 
 /*#region Background and text color using variables */
