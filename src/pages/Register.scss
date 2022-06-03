@@ -3,14 +3,13 @@
 .register {
     display: flex;
     border: 1px solid #e9ecef;
-    border-radius: 5px;
-    /* box-shadow: 1px 3px 10px #e9ecef; */
+    border-radius: 1rem;
     background-color: white;
+    width: 90%;
 }
 
 #form {
-    max-width: 320px;
-    width: 100vw;
+    width: 100%;
     margin: 2em auto;
 }
 
@@ -42,16 +41,17 @@
 
 .register .col-1 {
     margin: auto;
-    padding: 3em 0;
+    padding: 3rem 1rem;
+    width: 100%;
 }
 
 .register .col-2 img {
-    width: 480px;
+    width: 23rem;
     height: 100%;
     object-fit: cover;
     align-self: flex-end;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     display: none;
 }
 

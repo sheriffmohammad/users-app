@@ -14,7 +14,7 @@ const Page = ({ pageTitle, children, addHeader }: Props) => {
     return (
         <div className="height-full">
 
-            {/* Conditionally render a header if a page title is passed */}
+            {/* Conditionally render header based on preference */}
             {addHeader == true &&
                 <div className="page-header text-black">
 
