@@ -40,8 +40,6 @@ const Layout = ({ pageTitle, children }: Props) => {
                 {/* Dynamic Page Title */}
                 <title>{pageTitle}</title>
 
-                <h1>{pageTitle}</h1>
-
                 {children}
 
             </main>
