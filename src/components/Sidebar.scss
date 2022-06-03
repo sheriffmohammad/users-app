@@ -15,8 +15,32 @@
     align-items: center;
 }
 
-.icon {
+.header-title {
+    transform-origin: left;
+    transition-duration: 300ms;
+}
+
+.logo {
     width: 2rem;
+}
+.menu-icon {
+    width: 1.5rem;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+.menu-item:hover {
+    background-color: #3f4878;
+    color: white !important;
+}
+.menu-item-gap {
+    margin-top: 3rem;
 }
 
 .arrow {

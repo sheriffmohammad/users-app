@@ -1,11 +1,12 @@
-/* Standard variables*/
+/*#region Standard variables*/
 $primary: #0055bf;
 $secondary: #000e4f;
-$tertiary: #000;
+$tertiary: #bcceff;
 $quaternary: #fff;
 $fontSize: 1rem;
+/*#endregion*/
 
-/* App styles */
+/*#region Generic App styles */
 * {
     box-sizing: border-box;
 }
@@ -14,27 +15,69 @@ body {
     margin: 0;
     padding: 0;
 }
-.bg-primary{
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+span {
+    line-height: 0;
+}
+/*#endregion */
+
+/*#region Background and text color using variables */
+.bg-primary {
     background-color: $primary;
 }
-.bg-secondary{
+.bg-secondary {
     background-color: $secondary;
 }
-.bg-tertiary{
+.bg-tertiary {
     background-color: $tertiary;
 }
-.bg-quaternary{
+.bg-quaternary {
     background-color: $quaternary;
 }
-.text-primary{
+.bg-white {
+    background-color: #fff;
+}
+.bg-black {
+    background-color: #000;
+}
+
+.text-primary {
     color: $primary;
 }
-.text-secondary{
+.text-secondary {
     color: $secondary;
 }
-.text-tertiary{
+.text-tertiary {
     color: $tertiary;
 }
-.text-quaternary{
+.text-quaternary {
     color: $quaternary;
 }
+.text-white {
+    color: #fff;
+}
+.text-black {
+    color: #000;
+}
+/*#endregion*/
+
+/*#region Commonly used styles*/
+.scale-0 {
+    transform: scale(0);
+}
+.hidden {
+    display: none;
+}
+.center-h {
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-absolute{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*#endregion */
