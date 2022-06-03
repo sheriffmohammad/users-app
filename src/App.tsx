@@ -12,18 +12,19 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+import Page from './components/Page';
 
 function App() {
   return (
 
     <BrowserRouter>
-      <Layout pageTitle='Home Page'>
+      <Layout>
         <Routes>
-          <Route path='*' element={<NotFound />} />
+          <Route path='*' element={<Page pageTitle='Not Found'><NotFound /></Page>} />
           <Route path="/" element={<App />} />
-          <Route index element={<Home />} />
-          <Route path="log-in" element={<LogIn />} />
-          <Route path="register" element={<Register />} />
+          <Route index element={<Page pageTitle='Home'><Home /></Page>} />
+          <Route path="log-in" element={<Page pageTitle="Log In"><LogIn /></Page>} />
+          <Route path="register" element={<Page pageTitle='Register'><Register /></Page>} />
         </Routes>
       </Layout>
     </BrowserRouter>

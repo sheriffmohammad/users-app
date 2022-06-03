@@ -3,11 +3,10 @@ import Sidebar from './Sidebar';
 import './Layout.scss'
 
 type Props = {
-    pageTitle: string,
     children: JSX.Element,
 };
 
-const Layout = ({ pageTitle, children }: Props) => {
+const Layout = ({ children }: Props) => {
 
     const Menu = [
         {
@@ -32,16 +31,12 @@ const Layout = ({ pageTitle, children }: Props) => {
     return (
         <div className='layout'>
 
+            {/* Side bar */}
             <Sidebar appName='Users App' appLogo='icon-user' menu={Menu}></Sidebar>
 
             {/* Main Content */}
             <main>
-
-                {/* Dynamic Page Title */}
-                <title>{pageTitle}</title>
-
                 {children}
-
             </main>
         </div>
     )
