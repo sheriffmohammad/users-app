@@ -1,17 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Register.scss'
+import { useMutation } from 'react-query';
+import { useAddUserData } from '../helpers/httpHelper'
 
 export default function Register() {
+
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+
+    const { mutate: addUser, isLoading, isSuccess } = useAddUserData();
+
+    const register = (e: any) => {
+
+        // Prevent page reloading
+
+        e.preventDefault();
+
+        const user = {
+            userName: userName,
+            password: password
+        };
+
+        addUser(user, {
+            onSuccess: () => {
+            }
+        });
+    };
+
     return (
         <div className="register">
             <div className="col-1">
                 <h2>Register</h2>
 
                 <form id='form' className='flex flex-col'>
-                    <input type="text" placeholder='username' />
-                    <input type="text" placeholder='password' />
+                    <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
                     <input type="text" placeholder='confirm password' />
-                    <button className='btn'>Register</button>
+                    <button disabled={isLoading} onClick={register} className='btn'>Register</button>
                 </form>
 
             </div>

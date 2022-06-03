@@ -13,6 +13,8 @@ import LogIn from './pages/LogIn';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Page from './components/Page';
+import apiClient from "./api/apiClient";
+
 
 function App() {
   return (

@@ -30,6 +30,13 @@
     cursor: pointer;
 }
 
+#form > .btn:disabled {
+    background-color: $tertiary;
+    color: white;
+    font-size: 1em;
+    cursor: default;
+}
+
 .flex {
     display: flex;
     gap: 1em;
