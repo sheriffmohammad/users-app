@@ -7,10 +7,7 @@
 .page-header {
     background-color: white;
     @include page-padding;
-    height: 30%
 }
 .page-content {
     @include page-padding;
-    overflow-y: scroll;
-    height: 70%;
 }
