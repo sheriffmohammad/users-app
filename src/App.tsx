@@ -11,6 +11,7 @@ import {
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Register from './pages/Register';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <BrowserRouter>
       <Layout pageTitle='Home Page'>
         <Routes>
+          <Route path='*' element={<NotFound />} />
           <Route path="/" element={<App />} />
           <Route index element={<Home />} />
           <Route path="log-in" element={<LogIn />} />
