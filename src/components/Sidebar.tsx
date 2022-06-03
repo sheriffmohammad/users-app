@@ -9,10 +9,11 @@ type Menu = {
 
 type Props = {
     appName: string,
+    appLogo: string,
     menu: Menu[],
 };
 
-const Sidebar = ({ appName, menu }: Props) => {
+const Sidebar = ({ appName, appLogo, menu }: Props) => {
     const [open, setOpen] = useState(true);
 
     return (
@@ -25,8 +26,8 @@ const Sidebar = ({ appName, menu }: Props) => {
             {/* Header */}
             <div className='side-bar-header'>
 
-                {/* Logo */}
-                <img className={`logo ${!open && 'center-absolute'}`} src="assets/images/icon-user.png" />
+                {/* App Logo */}
+                <img className={`logo ${!open && 'center-absolute'}`} src={`/assets/images/${appLogo}.png`} />
 
                 {/* Title */}
                 <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{appName}</h2>

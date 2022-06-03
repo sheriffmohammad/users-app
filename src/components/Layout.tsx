@@ -29,7 +29,7 @@ const Layout = ({ pageTitle, children }: Props) => {
     return (
         <div className='layout'>
 
-            <Sidebar appName='Users App' menu={Menu}></Sidebar>
+            <Sidebar appName='Users App' appLogo='icon-user' menu={Menu}></Sidebar>
 
             {/* Main Content */}
             <main>
