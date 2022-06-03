@@ -11,7 +11,7 @@ const Page = ({ pageTitle, children }: Props) => {
         document.title = "Users App - " + pageTitle || "";
     }, [pageTitle]);
     return (
-        <div>
+        <div className="height-full">
             <div className="page-header text-black">
 
                 <h1>{pageTitle} Page</h1>

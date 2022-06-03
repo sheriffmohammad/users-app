@@ -11,11 +11,13 @@ $fontSize: 1rem;
     box-sizing: border-box;
     font-family: Arial;
 }
+html,
 body {
     font-size: $fontSize;
     margin: 0;
     padding: 0;
     background-color: $quaternary;
+    height: 100%;
 }
 ul {
     list-style-type: none;
@@ -91,5 +93,8 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+.height-full {
+    height: 100%;
 }
 /*#endregion */
