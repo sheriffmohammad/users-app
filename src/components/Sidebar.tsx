@@ -38,8 +38,8 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
             {/* Navigation menu*/}
             <ul>
                 {menu.map((item, index) => (
-                    <Link to={`${item.path}`}>
-                        <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`} key={index}>
+                    <Link key={index} to={`${item.path}`}>
+                        <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
                             <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} />
                             <span className={`${!open && 'hidden'}`}>{item.title}</span>
                         </li>
