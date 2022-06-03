@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import './Register.scss'
 import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function Register() {
+
+    const navigate = useNavigate();
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -23,6 +26,8 @@ export default function Register() {
 
         addUser(user, {
             onSuccess: () => {
+                localStorage.setItem('user', JSON.stringify(user));
+                navigate('/');
             }
         });
     };
