@@ -3,6 +3,8 @@ import './Register.scss'
 import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
 import { Navigate, useNavigate } from 'react-router-dom';
+import user from '../classes/user'
+import menu from '../data/menu'
 
 export default function Register() {
 
@@ -10,6 +12,8 @@ export default function Register() {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+
+    const user = localStorage.getItem('user');
 
     const { mutate: addUser, isLoading, isSuccess } = useAddUserData();
 
@@ -19,7 +23,7 @@ export default function Register() {
 
         e.preventDefault();
 
-        const user = {
+        const user: user = {
             userName: userName,
             password: password
         };
@@ -33,21 +37,26 @@ export default function Register() {
     };
 
     return (
-        <div className="register">
-            <div className="col-1">
-                <h2>Register</h2>
+        <div >
+            {!user &&
+                <div className="register">
 
-                <form id='form' className='flex flex-col'>
-                    <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
-                    <input type="text" placeholder='confirm password' />
-                    <button disabled={isLoading} onClick={register} className='btn'>Register</button>
-                </form>
+                    <div className="col-1">
+                        <h2>Register</h2>
 
-            </div>
-            <div className="col-2">
-                <img src='assets/images/bg-form-2.jpg' alt="" />
-            </div>
+                        <form id='form' className='flex flex-col'>
+                            <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
+                            <input type="text" placeholder='confirm password' />
+                            <button disabled={isLoading} onClick={register} className='btn'>Register</button>
+                        </form>
+
+                    </div>
+                    <div className="col-2">
+                        <img src='assets/images/bg-form-2.jpg' alt="" />
+                    </div>
+                </div>}
+            {user && <div>User already logged-in</div>}
         </div>
     )
 }

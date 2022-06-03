@@ -1,4 +1,4 @@
-const Menu = [
+let menu = [
     {
         title: 'Home',
         src: 'home',
@@ -20,4 +20,4 @@ const Menu = [
         visible: true
     }
 ];
-export default Menu
+export default menu

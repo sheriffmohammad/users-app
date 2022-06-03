@@ -2,11 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useQuery, useMutation } from 'react-query';
 import apiClient from '../api/apiClient';
-
-type user = {
-    userName: string,
-    password: string
-}
+import user from '../classes/user'
 
 const getUsers = async () => {
     return await apiClient.get("/users");

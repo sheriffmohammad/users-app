@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar';
 import './Layout.scss'
-import Menu from '../data/Menu'
+import menu from '../data/menu'
 
 type Props = {
     children: JSX.Element,
@@ -14,7 +14,7 @@ const Layout = ({ children }: Props) => {
         <div className='layout'>
 
             {/* Side bar */}
-            <Sidebar appName='Users App' appLogo='user' menu={Menu}></Sidebar>
+            <Sidebar appName='Users App' appLogo='user' menu={menu}></Sidebar>
 
             {/* Main Content */}
             <main>
