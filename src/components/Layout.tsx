@@ -13,16 +13,19 @@ const Layout = ({ pageTitle, children }: Props) => {
         {
             title: 'Home',
             src: 'icon-home',
-            gap: true
+            gap: true,
+            path: '/'
         },
         {
             title: 'Register',
             src: 'icon-register',
-            gap: true
+            gap: true,
+            path: '/register'
         },
         {
             title: 'Log-In',
-            src: 'icon-log-in'
+            src: 'icon-log-in',
+            path: '/log-in'
         }
     ]
 

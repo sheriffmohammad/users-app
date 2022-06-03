@@ -2,15 +2,29 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import Layout from './components/Layout';
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './pages/Home';
+import LogIn from './pages/LogIn';
+import Register from './pages/Register';
 
 function App() {
   return (
-    <Layout pageTitle='Home Page'>
 
-      <div>
-        Test
-      </div>
-    </Layout>
+    <BrowserRouter>
+      <Layout pageTitle='Home Page'>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route index element={<Home />} />
+          <Route path="log-in" element={<LogIn />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

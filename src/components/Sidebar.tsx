@@ -1,10 +1,12 @@
 import React, { Component, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './Sidebar.scss'
 
 type Menu = {
     title: string,
     src: string,
-    gap?: boolean
+    gap?: boolean,
+    path: string
 };
 
 type Props = {
@@ -36,10 +38,12 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
             {/* Navigation menu*/}
             <ul>
                 {menu.map((item, index) => (
-                    <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`} key={index}>
-                        <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} />
-                        <span className={`${!open && 'hidden'}`}>{item.title}</span>
-                    </li>
+                    <Link to={`${item.path}`}>
+                        <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`} key={index}>
+                            <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} />
+                            <span className={`${!open && 'hidden'}`}>{item.title}</span>
+                        </li>
+                    </Link>
                 ))}
             </ul>
         </div >
