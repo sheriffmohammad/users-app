@@ -20,11 +20,11 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path='*' element={<Page pageTitle='Not Found'><NotFound /></Page>} />
+          <Route path='*' element={<Page pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
           <Route path="/" element={<App />} />
-          <Route index element={<Page pageTitle='Home'><Home /></Page>} />
-          <Route path="log-in" element={<Page pageTitle="Log In"><LogIn /></Page>} />
-          <Route path="register" element={<Page pageTitle='Registration'><Register /></Page>} />
+          <Route index element={<Page pageTitle='Home' addHeader={true}><Home /></Page>} />
+          <Route path="log-in" element={<Page pageTitle="Log In" addHeader={false}><LogIn /></Page>} />
+          <Route path="register" element={<Page pageTitle='Registration' addHeader={false}><Register /></Page>} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -2,20 +2,25 @@ import { useEffect } from "react";
 import './Page.scss';
 
 type Props = {
-    pageTitle: string,
+    pageTitle?: string,
     children: JSX.Element,
+    addHeader: boolean
 };
 
-const Page = ({ pageTitle, children }: Props) => {
+const Page = ({ pageTitle, children, addHeader }: Props) => {
     useEffect(() => {
         document.title = "Users App - " + pageTitle || "";
     }, [pageTitle]);
     return (
         <div className="height-full">
-            <div className="page-header text-black">
 
-                <h1>{pageTitle} Page</h1>
-            </div>
+            {/* Conditionally render a header if a page title is passed */}
+            {addHeader == true &&
+                <div className="page-header text-black">
+
+                    <h1>{pageTitle} Page</h1>
+                </div>}
+
             <div className="page-content">
 
                 {children}

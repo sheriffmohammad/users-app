@@ -11,19 +11,19 @@ const Layout = ({ children }: Props) => {
     const Menu = [
         {
             title: 'Home',
-            src: 'icon-home',
+            src: 'home',
             gap: true,
             path: '/'
         },
         {
             title: 'Register',
-            src: 'icon-register',
+            src: 'register',
             gap: true,
             path: '/register'
         },
         {
             title: 'Log-In',
-            src: 'icon-log-in',
+            src: 'log-in',
             path: '/log-in'
         }
     ]
@@ -32,7 +32,7 @@ const Layout = ({ children }: Props) => {
         <div className='layout'>
 
             {/* Side bar */}
-            <Sidebar appName='Users App' appLogo='icon-user' menu={Menu}></Sidebar>
+            <Sidebar appName='Users App' appLogo='user' menu={Menu}></Sidebar>
 
             {/* Main Content */}
             <main>
