@@ -8,10 +8,28 @@ type Props = {
 };
 
 const Layout = ({ pageTitle, children }: Props) => {
+
+    const Menu = [
+        {
+            title: 'Home',
+            src: 'icon-home',
+            gap: true
+        },
+        {
+            title: 'Register',
+            src: 'icon-register',
+            gap: true
+        },
+        {
+            title: 'Log-In',
+            src: 'icon-log-in'
+        }
+    ]
+
     return (
         <div className='layout'>
 
-            <Sidebar></Sidebar>
+            <Sidebar appName='Users App' menu={Menu}></Sidebar>
 
             {/* Main Content */}
             <main>

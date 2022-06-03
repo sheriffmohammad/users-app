@@ -1,25 +1,22 @@
 import React, { Component, useState } from 'react'
 import './Sidebar.scss'
 
-export default function Sidebar() {
+type Menu = {
+    title: string,
+    src: string,
+    gap?: boolean
+};
+
+type Props = {
+    appName: string,
+    menu: Menu[],
+};
+
+const Sidebar = ({ appName, menu }: Props) => {
     const [open, setOpen] = useState(true);
-    const Menu = [
-        {
-            title: 'Home',
-            src: 'icon-home',
-            gap:true
-        },
-        {
-            title: 'Register',
-            src: 'icon-register',
-            gap: true
-        },
-        {
-            title: 'Log-In',
-            src: 'icon-log-in'
-        }
-    ]
+
     return (
+
         <div className={'side-bar ' + `${open ? 'open' : 'closed'}`}>
 
             {/* Arrow */}
@@ -32,12 +29,12 @@ export default function Sidebar() {
                 <img className={`logo ${!open && 'center-absolute'}`} src="assets/images/icon-user.png" />
 
                 {/* Title */}
-                <h2 className={`text-white header-title ${!open && 'scale-0'} `}>Users App</h2>
+                <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{appName}</h2>
             </div>
 
             {/* Navigation menu*/}
             <ul>
-                {Menu.map((item, index) => (
+                {menu.map((item, index) => (
                     <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`} key={index}>
                         <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} />
                         <span className={`${!open && 'hidden'}`}>{item.title}</span>
@@ -47,4 +44,6 @@ export default function Sidebar() {
         </div >
     )
 }
+
+export default Sidebar
 
