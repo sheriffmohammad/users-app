@@ -6,7 +6,8 @@ export default function Sidebar() {
     const Menu = [
         {
             title: 'Home',
-            src: 'icon-home'
+            src: 'icon-home',
+            gap:true
         },
         {
             title: 'Register',
