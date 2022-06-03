@@ -23,13 +23,13 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
         <div className={'side-bar ' + `${open ? 'open' : 'closed'}`}>
 
             {/* Arrow */}
-            <img onClick={() => setOpen(!open)} src="/assets/images/icon-arrow.png" className={`arrow bg-quaternary ${!open && 'rotate-180'}`} />
+            <img onClick={() => setOpen(!open)} src="/assets/images/icon-arrow.png" alt='' className={`arrow bg-quaternary ${!open && 'rotate-180'}`} />
 
             {/* Header */}
             <div className='side-bar-header'>
 
                 {/* App Logo */}
-                <img className={`logo ${!open && 'center-absolute'}`} src={`/assets/images/${appLogo}.png`} />
+                <img className={`logo ${!open && 'center-absolute'}`} src={`/assets/images/${appLogo}.png`} alt='' />
 
                 {/* Title */}
                 <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{appName}</h2>
@@ -40,7 +40,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 {menu.map((item, index) => (
                     <Link key={index} to={`${item.path}`}>
                         <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
-                            <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} />
+                            <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/images/${item.src}.png`} alt='' />
                             <span className={`${!open && 'hidden'}`}>{item.title}</span>
                         </li>
                     </Link>
