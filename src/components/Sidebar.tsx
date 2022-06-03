@@ -6,7 +6,8 @@ type Menu = {
     title: string,
     src: string,
     gap?: boolean,
-    path: string
+    path: string,
+    visible: boolean
 };
 
 type Props = {
@@ -39,10 +40,13 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
             <ul>
                 {menu.map((item, index) => (
                     <Link key={index} to={`${item.path}`}>
-                        <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
-                            <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />
-                            <span className={`${!open && 'hidden'}`}>{item.title}</span>
-                        </li>
+                        {
+                            item.visible &&
+                            <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
+                                <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />
+                                <span className={`${!open && 'hidden'}`}>{item.title}</span>
+                            </li>
+                        }
                     </Link>
                 ))}
             </ul>
