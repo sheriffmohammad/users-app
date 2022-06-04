@@ -38,8 +38,8 @@ export default function Register({ onRegisterHandler }: Props) {
         addUser(user, {
             onSuccess: () => {
                 localStorage.setItem('user', JSON.stringify(user));
-                navigate('/');
                 onRegisterHandler();
+                navigate('/');
             }
         });
     };

@@ -26,17 +26,21 @@ function App() {
 
     setMenuData(userMenu);
   }
+  const onLogOutHandler = () => {
+
+    setMenuData(guestMenu);
+  }
 
   return (
 
     <BrowserRouter>
       <Layout menu={menuData}>
         <Routes>
-          <Route path='*' element={<Page pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
+          <Route path='*' element={<Page onLogOutHandler={ onLogOutHandler } pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
           <Route path="/" element={<App />} />
-          <Route index element={<Page pageTitle='Home' addHeader={true}><Home /></Page>} />
-          <Route path="log-in" element={<Page pageTitle="Log In" addHeader={false}><LogIn /></Page>} />
-          <Route path="register" element={<Page pageTitle='Registration' addHeader={false}><Register onRegisterHandler={onRegisterHandler} /></Page>} />
+          <Route index element={<Page onLogOutHandler={ onLogOutHandler } pageTitle='Home' addHeader={true}><Home /></Page>} />
+          <Route path="log-in" element={<Page onLogOutHandler={ onLogOutHandler } pageTitle="Log In" addHeader={false}><LogIn /></Page>} />
+          <Route path="register" element={<Page onLogOutHandler={ onLogOutHandler } pageTitle='Registration' addHeader={false}><Register onRegisterHandler={onRegisterHandler} /></Page>} />
         </Routes>
       </Layout>
     </BrowserRouter>

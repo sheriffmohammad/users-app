@@ -7,6 +7,8 @@
 .page-header {
     background-color: white;
     @include page-padding;
+    display: flex;
+    justify-content: space-between;
 }
 .page-content {
     @include page-padding;
@@ -14,4 +16,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.icon{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
 }
