@@ -6,6 +6,7 @@
     "Application.password": "Password",
     "Application.confirmPassword": "Confirm Password",
     "Application.passwordsDontMatch": "Passwords don't match",
+    "Application.required": "Please fill all fields",
     "Application.register": "Register",
     "Application.startEditing": "Click on a user to start editing",
     "Application.editing": "Editing user: ",

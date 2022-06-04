@@ -21,7 +21,7 @@ export default function Register({ onRegisterHandler }: Props) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [formErrors, setFormErrors] = useState({ confirmPassword: '' });
+    const [formErrors, setFormErrors] = useState({ errors: '' });
 
     // Current user data (if any)
 
@@ -31,6 +31,16 @@ export default function Register({ onRegisterHandler }: Props) {
 
     const navigate = useNavigate();
 
+    // Handle input change
+
+    const isValidInput = () => {
+        if (!userName.trim() || !password.trim() || !confirmPassword.trim()) {
+            return false;
+        }
+        else
+            return true;
+    }
+
     // On register button click
 
     const register = (e: any) => {
@@ -39,39 +49,48 @@ export default function Register({ onRegisterHandler }: Props) {
 
         e.preventDefault();
 
-        // Create a user object
+        // If the input is valid
 
-        const user: user = {
-            id: 0,
-            userName: userName,
-            password: password
-        };
+        if (isValidInput()) {
 
-        // Use the api to add the user object
+            // Create a user object
 
-        addUser(user, {
+            const user: user = {
+                id: 0,
+                userName: userName,
+                password: password
+            };
 
-            // If the user is added successfully
+            // Use the api to add the user object
 
-            onSuccess: () => {
+            addUser(user, {
 
-                // Store user data in local storage
+                // If the user is added successfully
 
-                localStorage.setItem('user', JSON.stringify(user));
+                onSuccess: () => {
 
-                // Update the menu
+                    // Store user data in local storage
 
-                onRegisterHandler();
+                    localStorage.setItem('user', JSON.stringify(user));
 
-                // Navigate to home
+                    // Update the menu
 
-                navigate('/');
-            }
+                    onRegisterHandler();
 
-        });
+                    // Navigate to home
+
+                    navigate('/');
+                }
+
+            });
+        }
+        else {
+            setFormErrors({ errors: t('Application.required') })
+        }
     };
 
     useEffect(() => {
+
         const handleUserInput = () => {
 
             // If passwords are not empty and don't match
@@ -80,7 +99,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
                 // Add an error to the form errors
 
-                setFormErrors({ confirmPassword: t('Application.passwordsDontMatch') })
+                setFormErrors({ errors: t('Application.passwordsDontMatch') })
             }
 
             // if passwords match
@@ -89,7 +108,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
                 // Remove the error
 
-                setFormErrors({ confirmPassword: '' });
+                setFormErrors({ errors: '' });
             }
         };
         handleUserInput();
@@ -121,10 +140,10 @@ export default function Register({ onRegisterHandler }: Props) {
                             <input name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type='password' />
 
                             {/* Passwords don't match label */}
-                            <label className='error-label'>{formErrors.confirmPassword}</label>
+                            <label className='error-label'>{formErrors.errors}</label>
 
                             {/* Register button */}
-                            <button type='submit' disabled={isLoading || formErrors.confirmPassword !== ''} onClick={register} className='btn'>{t('Application.register')}</button>
+                            <button type='submit' disabled={isLoading || formErrors.errors == t('Application.passwordsDontMatch')} onClick={register} className='btn'>{t('Application.register')}</button>
                         </form>
 
                     </div>
