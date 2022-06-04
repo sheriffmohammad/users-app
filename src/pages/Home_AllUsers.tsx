@@ -7,12 +7,20 @@ import './Home.scss'
 
 export default function Home_AllUsers() {
 
-    const { data, isSuccess, isLoading } = useGetUsersData();
-    const { mutate: deleteUser } = useDeleteUserData();
+    // Component states
 
     const [users, setUsers] = useState<user[]>([]);
 
-    const queryClient = useQueryClient()
+    // React query hooks
+
+    const { data, isLoading } = useGetUsersData();
+    const { mutate: deleteUser } = useDeleteUserData();
+
+    // React query client
+
+    const queryClient = useQueryClient();
+
+    // Get all users data and change the state
 
     const getData = () => {
         if (data != undefined) {
@@ -20,41 +28,63 @@ export default function Home_AllUsers() {
         }
     };
 
+    // On deleting a user
+
     const onDeleteButtonClick = (id: number) => {
+
+        // Call the api to delete user by id
+
         deleteUser(id, {
+
+            // After deleting successfully
+
             onSuccess: () => {
+
+                // Re-fetch users data
+
                 queryClient.invalidateQueries('users');
             }
         });
     };
 
+    // Get the users data once the component is rendered
+
     useEffect(() => {
-        // Update the document title using the browser API
         getData();
     });
 
     return (
         <div className='user-cards-container'>
 
+            {/* Loop on all of the users */}
             {users.map((item, index) => (
 
-                <div className='user-card' key={index}>
-                    <img className='icon' src="assets/icons/user-name.png" alt="" />
-                    <div>
-                        {item.userName}
-                    </div>
-                    <img className='icon' src="assets/icons/password.png" alt="" />
-                    <div>
-                        {item.password}
-                    </div>
+                <div className='user-card' key={index} >
 
+                    {/* Username icon */}
+                    <img className='icon' src="assets/icons/user-name.png" alt="" />
+
+                    {/* Username */}
+                    {item.userName}
+
+                    {/* Password icon */}
+                    <img className='icon' src="assets/icons/password.png" alt="" />
+
+                    {/* Password */}
+                    {item.password}
+
+                    {/* Delete button */}
                     <img onClick={() => onDeleteButtonClick(item.id)} className='icon' src="assets/icons/delete.png" alt="" />
                 </div>
-            ))}
-            {isLoading &&
+            ))
+            }
+
+            {/* If data is still loading show loader */}
+            {
+                isLoading &&
                 <Loader message='Loading users...'></Loader>
             }
-        </div>
+        </div >
     )
 }
 

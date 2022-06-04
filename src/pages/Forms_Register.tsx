@@ -22,7 +22,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
     const user = localStorage.getItem('user');
 
-    const { mutate: addUser, isLoading } = useAddUserData();
+    const { mutate: addUser, data, isLoading } = useAddUserData();
 
     const navigate = useNavigate();
 
@@ -62,6 +62,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
                 navigate('/');
             }
+
         });
     };
 
