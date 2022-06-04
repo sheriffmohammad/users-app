@@ -18,7 +18,9 @@ import { guestMenu, userMenu } from './data/menu'
 
 function App() {
 
-  const [menuData, setMenuData] = useState(guestMenu);
+  const user = localStorage.getItem('user');
+
+  const [menuData, setMenuData] = useState(user ? userMenu : guestMenu);
 
   const onRegisterHandler = () => {
 
