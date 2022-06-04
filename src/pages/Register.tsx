@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './Register.scss'
+import './Forms.scss'
 import { useAddUserData } from '../helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
 import { user } from '../classes/user'
