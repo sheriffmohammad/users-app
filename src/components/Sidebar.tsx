@@ -2,6 +2,8 @@ import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Sidebar.scss'
 import { menu } from '../classes/menu';
+import { useTranslate } from '../translate';
+import LanguageSwitcher from './LanguageSwitcher';
 
 type Props = {
     appName: string,
@@ -10,6 +12,10 @@ type Props = {
 };
 
 const Sidebar = ({ appName, appLogo, menu }: Props) => {
+
+    const i18n = useTranslate();
+    const { t } = i18n;
+
     const [open, setOpen] = useState(false);
 
     return (
@@ -26,7 +32,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 <img className={`logo ${!open && 'center-absolute'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
 
                 {/* Title */}
-                <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{appName}</h2>
+                <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{t('Application.title')}</h2>
             </div>
 
             {/* Navigation menu*/}
@@ -41,6 +47,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                     </Link>
                 ))}
             </ul>
+            <LanguageSwitcher></LanguageSwitcher>
         </div >
     )
 }
