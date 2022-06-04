@@ -1,5 +1,12 @@
 {
     "Application.title": "برنامج المستخدمين",
-    
+    "Application.page": "صفحة ال",
+    "Application.login": "تسجيل الدخول",
+    "Application.userName": "اسم المستخدم",
+    "Application.password": "كلمة السر",
+    "Application.confirmPassword": "تأكيد كلمة السر",
+    "Application.register": "انشاء حساب",
+    "Application.startEditing": "اضغط على مستخدم لتعديله",
+    "Application.editing": "تعديل المستخدم: ",
     "LanguageSwitcher.used": "اللغة المستخدمة"
 }

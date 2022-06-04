@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import './Page.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
-import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslate } from '../translate';
+import LanguageSwitcher from './LanguageSwitcher';
+import { t } from "../translate/translate";
+
 
 type Props = {
     pageTitle?: string,
@@ -11,6 +14,10 @@ type Props = {
 };
 
 const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
+
+    const i18n = useTranslate();
+    const { t } = i18n;
+
     useEffect(() => {
         document.title = "Users App - " + pageTitle || "";
     }, [pageTitle]);
@@ -32,7 +39,7 @@ const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
             {/* Conditionally render header based on preference */}
             {addHeader == true &&
                 <div className="page-header text-black">
-                    <h1>{pageTitle} Page</h1>
+                    <h1>{pageTitle} {t('Application.page')}</h1>
 
                     {user &&
                         <img onClick={logOut} className="icon" src="assets/icons/log-out.png" alt="" />

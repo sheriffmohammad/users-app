@@ -1,6 +1,13 @@
 {
     "Application.title": "Users App",
-    
+    "Application.page": "Page",
+    "Application.login": "Login",
+    "Application.userName": "Username",
+    "Application.password": "Password",
+    "Application.confirmPassword": "Confirm Password",
+    "Application.register": "Register",
+    "Application.startEditing": "Click on a user to start editing",
+    "Application.editing": "Editing user: ",
     "LanguageSwitcher.used": "Lang selected:",
     "LanguageSwitcher.en": "English",
     "LanguageSwitcher.ar": "Arabic"

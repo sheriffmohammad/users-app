@@ -3,12 +3,16 @@ import './Forms.scss'
 import { useGetUsersData } from '../helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
 import { user } from '../classes/user'
+import { useTranslate } from '../translate';
 
 type Props = {
     onLoginHandler: () => void; // Used to change menu after successful login
 };
 
 export default function Login({ onLoginHandler }: Props) {
+
+    const i18n = useTranslate();
+    const { t } = i18n;
 
     // Component states
 
@@ -85,23 +89,23 @@ export default function Login({ onLoginHandler }: Props) {
 
                     {/* Sign in form */}
                     <div className="col-1">
-                        <h2>Log-In</h2>
+                        <h2>{t('Application.login')}</h2>
 
                         <form id='form' className='flex flex-col'>
 
                             {/* Username */}
-                            <label htmlFor='username'>Username</label>
-                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+                            <label htmlFor='username'>{t('Application.userName')}</label>
+                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text"/>
 
                             {/* Password */}
-                            <label htmlFor='password'>Password</label>
-                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
+                            <label htmlFor='password'>{t('Application.password')}</label>
+                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password"/>
 
                             {/* Username or password incorrect label */}
                             <label className='error-label'>{formErrors.incorrect}</label>
 
                             {/* Login button */}
-                            <button disabled={isLoading} onClick={login} className='btn'>Log in</button>
+                            <button disabled={isLoading} onClick={login} className='btn'>{t('Application.login')}</button>
                         </form>
 
                     </div>

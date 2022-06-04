@@ -3,12 +3,17 @@ import './Forms.scss'
 import { useAddUserData } from '../helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
 import { user } from '../classes/user'
+import { t } from '../translate/translate';
+import { useTranslate } from '../translate';
 
 type Props = {
     onRegisterHandler: () => void; // Used to change the menu after successful registration
 };
 
 export default function Register({ onRegisterHandler }: Props) {
+
+    const i18n = useTranslate();
+    const { t } = i18n;
 
     // Component states
 
@@ -99,27 +104,27 @@ export default function Register({ onRegisterHandler }: Props) {
 
                     {/* Registration form */}
                     <div className="col-1">
-                        <h2>Register</h2>
+                        <h2>{t('Application.register')}</h2>
 
                         <form id='form' className='flex flex-col'>
 
                             {/* Username */}
-                            <label htmlFor='username'>Username</label>
-                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+                            <label htmlFor='username'>{t('Application.userName')}</label>
+                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" />
 
                             {/* Password */}
-                            <label htmlFor='password'>Password</label>
-                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
+                            <label htmlFor='password'>{t('Application.password')}</label>
+                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
 
                             {/* Confirm password */}
-                            <label htmlFor='confirmPassword'>Password</label>
-                            <input name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type='password' placeholder='confirm password' />
+                            <label htmlFor='confirmPassword'>{t('Application.confirmPassword')}</label>
+                            <input name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type='password' />
 
                             {/* Passwords don't match label */}
                             <label className='error-label'>{formErrors.confirmPassword}</label>
 
                             {/* Register button */}
-                            <button type='submit' disabled={isLoading || formErrors.confirmPassword !== ''} onClick={register} className='btn'>Register</button>
+                            <button type='submit' disabled={isLoading || formErrors.confirmPassword !== ''} onClick={register} className='btn'>{t('Application.register')}</button>
                         </form>
 
                     </div>
