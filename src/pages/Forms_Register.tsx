@@ -80,7 +80,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
                 // Add an error to the form errors
 
-                setFormErrors({ confirmPassword: 'Passwords don\'t match' })
+                setFormErrors({ confirmPassword: t('Application.passwordsDontMatch') })
             }
 
             // if passwords match
