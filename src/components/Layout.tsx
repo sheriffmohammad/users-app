@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from './Sidebar';
 import './Layout.scss'
 import menu from '../data/menu'
@@ -9,12 +9,13 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 
+    const [menuData, setMenuData] = useState(menu);
 
     return (
         <div className='layout'>
 
             {/* Side bar */}
-            <Sidebar appName='Users App' appLogo='user' menu={menu}></Sidebar>
+            <Sidebar appName='Users App' appLogo='user' menu={menuData}></Sidebar>
 
             {/* Main Content */}
             <main>
