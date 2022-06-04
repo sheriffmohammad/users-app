@@ -17,6 +17,10 @@ export default function Home() {
       {user &&
         <Home_UpdateForm user={user}></Home_UpdateForm>
       }
+      {!user &&
+        <div>
+          Click on a user to start editing
+        </div>}
     </div>
   )
 }
