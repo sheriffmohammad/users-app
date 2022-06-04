@@ -31,7 +31,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
     const navigate = useNavigate();
 
-    // Handle input change
+    // Check if input is valid
 
     const isValidInput = () => {
         if (!userName.trim() || !password.trim() || !confirmPassword.trim()) {

@@ -7,6 +7,7 @@
     "Application.confirmPassword": "تأكيد كلمة السر",
     "Application.passwordsDontMatch": "كلمات السر غير متطابقة",
     "Application.required": "برجاء ادخال جميع البيانات",
+    "Application.incorrect": "اسم المستخدم او كلمة المرور غير صحيح",
     "Application.register": "انشاء حساب",
     "Application.startEditing": "اضغط على مستخدم لتعديله",
     "Application.editing": "تعديل المستخدم: ",

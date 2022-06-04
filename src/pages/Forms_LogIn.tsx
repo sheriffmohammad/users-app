@@ -19,7 +19,7 @@ export default function Login({ onLoginHandler }: Props) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    const [formErrors, setFormErrors] = useState({ incorrect: '' });
+    const [formErrors, setFormErrors] = useState({ errors: '' });
 
     const navigate = useNavigate();
 
@@ -29,6 +29,16 @@ export default function Login({ onLoginHandler }: Props) {
 
     const { data, isSuccess, isLoading } = useGetUsersData();
 
+    // Check if input is valid
+
+    const isValidInput = () => {
+        if (!userName.trim() || !password.trim()) {
+            return false;
+        }
+        else
+            return true;
+    }
+
     // On login button click
 
     const login = (e: any) => {
@@ -37,47 +47,57 @@ export default function Login({ onLoginHandler }: Props) {
 
         e.preventDefault();
 
-        // Get all users from api
+        // If the input is valid
 
-        const users: user[] = data?.data;
+        if (isValidInput()) {
 
-        // Search for user by username and password
+            // Get all users from api
 
-        const foundUsers = users.filter(user => user.userName === userName && user.password === password);
+            const users: user[] = data?.data;
 
-        // If the user is found
+            // Search for user by username and password
 
-        if (foundUsers.length > 0) {
+            const foundUsers = users.filter(user => user.userName === userName && user.password === password);
 
-            // Create a user object
+            // If the user is found
 
-            const user: user = {
-                id: 0,
-                userName: userName,
-                password: password
-            };
+            if (foundUsers.length > 0) {
 
-            // Store user data in local storage
+                // Create a user object
 
-            localStorage.setItem('user', JSON.stringify(user));
+                const user: user = {
+                    id: 0,
+                    userName: userName,
+                    password: password
+                };
 
-            // Update the menu
+                // Store user data in local storage
 
-            onLoginHandler();
+                localStorage.setItem('user', JSON.stringify(user));
 
-            // Navigate to home
+                // Update the menu
 
-            navigate('/');
+                onLoginHandler();
+
+                // Navigate to home
+
+                navigate('/');
+            }
+
+            // Else if the user is not found
+
+            else {
+
+                // Show incorrect username or password error
+
+                setFormErrors({ errors:  t('Application.incorrect') })
+            }
         }
-
-        // Else if the user is not found
 
         else {
-
-            // Show incorrect username or password error
-
-            setFormErrors({ incorrect: 'Incorrect username or password' })
+            setFormErrors({ errors: t('Application.required') })
         }
+
     };
 
     return (
@@ -95,14 +115,14 @@ export default function Login({ onLoginHandler }: Props) {
 
                             {/* Username */}
                             <label htmlFor='username'>{t('Application.userName')}</label>
-                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text"/>
+                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" />
 
                             {/* Password */}
                             <label htmlFor='password'>{t('Application.password')}</label>
-                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password"/>
+                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
 
-                            {/* Username or password incorrect label */}
-                            <label className='error-label'>{formErrors.incorrect}</label>
+                            {/* Errors label */}
+                            <label className='error-label'>{formErrors.errors}</label>
 
                             {/* Login button */}
                             <button disabled={isLoading} onClick={login} className='btn'>{t('Application.login')}</button>
