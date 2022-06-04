@@ -1,7 +1,16 @@
 import React from 'react'
+import { user } from '../classes/user'
 
-export default function Home_UpdateForm() {
+type Props = {
+  user: user
+}
+
+export default function Home_UpdateForm({ user }: Props) {
   return (
-    <div>Home_UpdateForm</div>
+    <div>
+      <div>
+        {user.userName}
+      </div>
+    </div>
   )
 }

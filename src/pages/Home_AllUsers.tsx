@@ -5,7 +5,11 @@ import Loader from '../components/Loader';
 import { useDeleteUserData, useGetUsersData } from '../helpers/httpHelper';
 import './Home.scss'
 
-export default function Home_AllUsers() {
+type Props = {
+    onEditUserHandler: (user: user) => void; // Used to change the menu after successful registration
+};
+
+export default function Home_AllUsers({ onEditUserHandler }: Props) {
 
     // Component states
 
@@ -57,9 +61,9 @@ export default function Home_AllUsers() {
         <div className='user-cards-container'>
 
             {/* Loop on all of the users */}
-            {users.map((item, index) => (
+            {users.map((item: user, index) => (
 
-                <div className='user-card' key={index} >
+                <div onClick={() => onEditUserHandler(item)} className='user-card' key={index} >
 
                     {/* Username icon */}
                     <img className='icon' src="assets/icons/user-name.png" alt="" />
