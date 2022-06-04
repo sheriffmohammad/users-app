@@ -1,4 +1,4 @@
-import React, { ReactPropTypes, useState } from 'react'
+import React, { ReactPropTypes, useCallback, useEffect, useState } from 'react'
 import './Register.scss'
 import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
@@ -15,6 +15,9 @@ export default function Register({ onRegisterHandler }: Props) {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const [formErrors, setFormErrors] = useState({ confirmPassword: '' });
 
     const user = localStorage.getItem('user');
 
@@ -44,6 +47,26 @@ export default function Register({ onRegisterHandler }: Props) {
         });
     };
 
+    useEffect(() => {
+        handleUserInput();
+    }, [password]);
+    useEffect(() => {
+        handleUserInput();
+    }, [confirmPassword]);
+
+    useEffect(() => {
+        console.log(formErrors);
+    }, [formErrors]);
+
+    const handleUserInput = () => {
+        if (password != '' && confirmPassword != '' && password !== confirmPassword) {
+            setFormErrors({ confirmPassword: 'Passwords don\'t match' })
+        }
+        if (password === confirmPassword) {
+            setFormErrors({ confirmPassword: '' });
+        }
+    };
+
     return (
         <div >
             {!user &&
@@ -53,10 +76,14 @@ export default function Register({ onRegisterHandler }: Props) {
                         <h2>Register</h2>
 
                         <form id='form' className='flex flex-col'>
-                            <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
-                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
-                            <input type="text" placeholder='confirm password' />
-                            <button disabled={isLoading} onClick={register} className='btn'>Register</button>
+                            <label htmlFor='username'>Username</label>
+                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+                            <label htmlFor='password'>Password</label>
+                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
+                            <label htmlFor='confirmPassword'>Password</label>
+                            <input name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type='password' placeholder='confirm password' />
+                            <label className='error-label'>{formErrors.confirmPassword}</label>
+                            <button type='submit' disabled={isLoading || formErrors.confirmPassword != ''} onClick={register} className='btn'>Register</button>
                         </form>
 
                     </div>
