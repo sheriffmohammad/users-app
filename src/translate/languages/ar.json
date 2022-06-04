@@ -10,6 +10,8 @@
     "Application.incorrect": "اسم المستخدم او كلمة المرور غير صحيح",
     "Application.register": "انشاء حساب",
     "Application.startEditing": "اضغط على مستخدم لتعديله",
+    "Application.notLoggedIn": "لم يتم تسجيل الدخول",
+    "Application.notLoggedOut": "تم تسجيل الدخول بالفعل",
     "Application.editing": "تعديل المستخدم: ",
     "LanguageSwitcher.used": "اللغة المستخدمة"
 }

@@ -125,3 +125,12 @@ h1 {
     height: 100%;
 }
 /*#endregion */
+
+/*#region Mixins*/
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+/*#endregion*/

@@ -11,19 +11,28 @@ export default function Home() {
 
   const [user, setUser] = useState<user>();
 
+  const currentUser = localStorage.getItem('user');
+
+
   const editUser = (user: user) => {
     setUser(user);
   };
 
   return (
     <div style={{ width: '100%', marginTop: '1rem' }}>
-      <Home_AllUsers onEditUserHandler={(user => editUser(user))}></Home_AllUsers>
-      {user &&
+      {currentUser &&
+        <Home_AllUsers onEditUserHandler={(user => editUser(user))}></Home_AllUsers>
+      }
+      {user && currentUser &&
         <Home_UpdateForm user={user}></Home_UpdateForm>
       }
-      {!user &&
+      {!user && currentUser &&
         <div style={{ textAlign: 'center' }}>
           {t('Application.startEditing')}
+        </div>}
+      {!currentUser &&
+        <div style={{ textAlign: 'center' }}>
+          {t('Application.notLoggedIn')}
         </div>}
     </div>
   )

@@ -10,6 +10,8 @@
     "Application.incorrect": "Incorrect username or password",
     "Application.register": "Register",
     "Application.startEditing": "Click on a user to start editing",
+    "Application.notLoggedIn": "User not logged in",
+    "Application.notLoggedOut": "User logged in already",
     "Application.editing": "Editing user: ",
     "LanguageSwitcher.used": "Lang selected:",
     "LanguageSwitcher.en": "English",
