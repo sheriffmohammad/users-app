@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import './Page.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
+import LanguageSwitcher from "./LanguageSwitcher";
 
 type Props = {
     pageTitle?: string,
@@ -31,7 +32,6 @@ const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
             {/* Conditionally render header based on preference */}
             {addHeader == true &&
                 <div className="page-header text-black">
-
                     <h1>{pageTitle} Page</h1>
 
                     {user &&
@@ -39,8 +39,8 @@ const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
                     }
                 </div>}
 
-            <div className="page-content">
 
+            <div className="page-content">
                 {children}
             </div>
         </div>

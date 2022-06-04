@@ -41,7 +41,13 @@ h2 {
 h1 {
     margin: 0;
 }
-
+.language-switcher {
+    background-color: transparent;
+    border: none;
+    color: $tertiary;
+    cursor: pointer;
+    text-decoration: underline 1px;
+}
 /* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 7px;

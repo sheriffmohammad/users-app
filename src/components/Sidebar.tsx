@@ -35,6 +35,10 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{t('Application.title')}</h2>
             </div>
 
+            <div className='menu-item'>
+                <LanguageSwitcher></LanguageSwitcher>
+            </div>
+
             {/* Navigation menu*/}
             <ul>
                 {menu.map((item, index) => (
@@ -47,7 +51,6 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                     </Link>
                 ))}
             </ul>
-            <LanguageSwitcher></LanguageSwitcher>
         </div >
     )
 }

@@ -16,7 +16,7 @@ function LanguageSwitcher() {
 
     const items = getLanguages().map((key: any) => {
         return key !== language ? (
-            <button
+            <button className='language-switcher'
                 key={key}
                 onClick={() => {
                     dispatch({ type: 'CHANGE_LANGUAGE', language: key });
@@ -30,10 +30,7 @@ function LanguageSwitcher() {
     });
 
     return (
-        <section>
-            <span>{items}</span>
-        </section>
-    );
+        <span className='center-h'>{items}</span>);
 }
 
 export default LanguageSwitcher;
