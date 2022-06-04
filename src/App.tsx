@@ -9,8 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/Home';
-import LogIn from './pages/LogIn';
-import Register from './pages/Register';
+import LogIn from './pages/Forms_LogIn';
+import Register from './pages/Forms_Register';
 import NotFound from './pages/NotFound';
 import Page from './components/Page';
 import apiClient from "./api/apiClient";
