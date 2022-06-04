@@ -45,6 +45,13 @@ export default function Login({ onLoginHandler }: Props) {
 
         if (foundUsers.length > 0) {
 
+            // Create a user object
+
+            const user: user = {
+                userName: userName,
+                password: password
+            };
+
             // Store user data in local storage
 
             localStorage.setItem('user', JSON.stringify(user));
