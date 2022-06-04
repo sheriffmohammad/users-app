@@ -1,32 +1,35 @@
-export const guestMenu = [
+
+import { menu } from "../classes/menu";
+
+// Menu for guest users
+
+export const guestMenu: menu[] = [
     {
         title: 'Home',
         src: 'home',
         gap: true,
         path: '/',
-        visible: true
     },
     {
         title: 'Register',
         src: 'register',
         gap: true,
         path: '/register',
-        visible: true
     },
     {
         title: 'Log-In',
         src: 'log-in',
         path: '/log-in',
-        visible: true
     }
 ];
 
-export const userMenu = [
+// Menu for logged-in user
+
+export const userMenu: menu[] = [
     {
         title: 'Home',
         src: 'home',
         gap: true,
         path: '/',
-        visible: true
     }
 ];
