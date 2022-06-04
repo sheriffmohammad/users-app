@@ -10,6 +10,13 @@ export const getCurrentLanguage = () => {
 
 export const setCurrentLanguage = (currentLanguage: string) => {
     _currentLanguage = currentLanguage;
+
+    if (currentLanguage === 'ar') {
+        document.getElementsByTagName('html')[0].setAttribute("dir", "rtl");
+    }
+    else{
+        document.getElementsByTagName('html')[0].setAttribute("dir", "ltr");   
+    }
 };
 
 export const getFallbackLanguage = () => {
