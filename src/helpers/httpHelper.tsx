@@ -12,12 +12,8 @@ const addUser = async (user: user) => {
     return apiClient.post("/users", user)
 }
 
-export const useUsersData = (onSuccess: any, onError: any) => {
-    return useQuery('users', getUsers,
-        {
-            onSuccess,
-            onError,
-        })
+export const useGetUsersData = () => {
+    return useQuery('users', getUsers)
 }
 
 export const useAddUserData = () => {

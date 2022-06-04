@@ -1,7 +1,7 @@
 import React, { ReactPropTypes, useState } from 'react'
 import './Register.scss'
 import { useMutation } from 'react-query';
-import { useAddUserData } from '../helpers/httpHelper'
+import { useAddUserData, useGetUsersData } from '../helpers/httpHelper'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { user } from '../classes/user'
 
@@ -16,11 +16,13 @@ export default function Login({ onLoginHandler }: Props) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
+    const [formErrors, setFormErrors] = useState({ incorrect: '' });
+
     const user = localStorage.getItem('user');
 
-    const { mutate: addUser, isLoading, isSuccess } = useAddUserData();
+    const { data, isSuccess, isLoading } = useGetUsersData();
 
-    const register = (e: any) => {
+    const login = (e: any) => {
 
         // Prevent page reloading
 
@@ -28,20 +30,28 @@ export default function Login({ onLoginHandler }: Props) {
 
         // Create a user object
 
-        const user: user = {
-            userName: userName,
-            password: password
-        };
+        const users: user[] = data?.data;
 
-        // Use the api to add the user object
+        const foundUsers = users.filter(user => user.userName === userName && user.password === password);
 
-        addUser(user, {
-            onSuccess: () => {
-                localStorage.setItem('user', JSON.stringify(user));
-                onLoginHandler();
-                navigate('/');
-            }
-        });
+        if (foundUsers.length > 0) {
+
+            // Store user data in local storage
+
+            localStorage.setItem('user', JSON.stringify(user));
+
+            // Update the menu
+
+            onLoginHandler();
+
+            // Navigate to home
+
+            navigate('/');
+        }
+
+        else {
+            setFormErrors({ incorrect: 'Incorrect username or password' })
+        }
     };
 
     return (
@@ -53,9 +63,18 @@ export default function Login({ onLoginHandler }: Props) {
                         <h2>Log-In</h2>
 
                         <form id='form' className='flex flex-col'>
-                            <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
-                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
-                            <button disabled={isLoading} onClick={register} className='btn'>Register</button>
+
+                            {/* Username */}
+                            <label htmlFor='username'>Username</label>
+                            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder='username' />
+
+                            {/* Password */}
+                            <label htmlFor='password'>Password</label>
+                            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='password' />
+
+                            {/* Username or password incorrect label */}
+                            <label className='error-label'>{formErrors.incorrect}</label>
+                            <button disabled={isLoading} onClick={login} className='btn'>Log in</button>
                         </form>
 
                     </div>
