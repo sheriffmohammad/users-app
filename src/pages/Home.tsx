@@ -12,13 +12,13 @@ export default function Home() {
   };
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', marginTop: '1rem' }}>
       <Home_AllUsers onEditUserHandler={(user => editUser(user))}></Home_AllUsers>
       {user &&
         <Home_UpdateForm user={user}></Home_UpdateForm>
       }
       {!user &&
-        <div>
+        <div style={{ textAlign: 'center' }}>
           Click on a user to start editing
         </div>}
     </div>
