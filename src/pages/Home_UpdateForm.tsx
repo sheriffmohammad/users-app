@@ -19,10 +19,20 @@ export default function Home_UpdateForm({ user }: Props) {
 
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const firstRender = useRef(true);
+  const [formErrors, setFormErrors] = useState({ errors: '' });
 
 
   const { mutate: editUser, data, isLoading } = useEditUserData();
+
+  // Check if input is valid
+
+  const isValidInput = () => {
+    if (!userName.trim() || !password.trim()) {
+      return false;
+    }
+    else
+      return true;
+  }
 
   // Get the users data once the component is rendered
 
@@ -37,33 +47,54 @@ export default function Home_UpdateForm({ user }: Props) {
 
     e.preventDefault();
 
-    const newUser: user = {
-      id: user.id,
-      userName: userName,
-      password: password
-    }
+    // If the input is valid
 
-    // Use the api to add the user object
+    if (isValidInput()) {
 
-    editUser(newUser, {
+      // Remove the validation error
 
-      // If the user is added successfully
+      setFormErrors({ errors: '' })
 
-      onSuccess: () => {
+      // Create a user object
 
-        // Store user data in local storage
-
-        queryClient.invalidateQueries('users');
-        setUserName('');
-        setPassword('');
+      const newUser: user = {
+        id: user.id,
+        userName: userName,
+        password: password
       }
 
-    });
+      // Use the api to add the user object
+
+      editUser(newUser, {
+
+        // If the user is added successfully
+
+        onSuccess: () => {
+
+          // Store user data in local storage
+
+          queryClient.invalidateQueries('users');
+          setUserName('');
+          setPassword('');
+        }
+
+      });
+    }
+
+    // Else if the input is invalid
+
+    else {
+
+      // Show all fields are required error
+
+      setFormErrors({ errors: t('Application.required') })
+    }
+
   }
 
   return (
     <div>
-      <div className="">
+      <div>
 
         {/* Registration form */}
         <div className="col-1">
@@ -73,11 +104,14 @@ export default function Home_UpdateForm({ user }: Props) {
 
             {/* Username */}
             <label htmlFor='username'>{t('Application.userName')}</label>
-            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text"/>
+            <input name='username' value={userName} onChange={(e) => setUserName(e.target.value)} type="text" />
 
             {/* Password */}
             <label htmlFor='password'>{t('Application.password')}</label>
-            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password"/>
+            <input name='password' value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
+
+            {/* Errors label */}
+            <label className='error-label'>{formErrors.errors}</label>
 
             {/* Register button */}
             <button type='submit' disabled={isLoading} onClick={edit} className='btn'>Save</button>

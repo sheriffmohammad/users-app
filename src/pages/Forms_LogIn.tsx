@@ -90,11 +90,16 @@ export default function Login({ onLoginHandler }: Props) {
 
                 // Show incorrect username or password error
 
-                setFormErrors({ errors:  t('Application.incorrect') })
+                setFormErrors({ errors: t('Application.incorrect') })
             }
         }
 
+        // Else if the input is invalid
+
         else {
+
+            // Show all fields are required error
+
             setFormErrors({ errors: t('Application.required') })
         }
 
