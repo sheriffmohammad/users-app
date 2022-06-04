@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReactPropTypes, useState } from 'react'
 import './Register.scss'
 import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
@@ -6,7 +6,11 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import user from '../classes/user'
 import menu from '../data/menu'
 
-export default function Register() {
+type Props = {
+    onRegisterHandler: () => void;
+};
+
+export default function Register({ onRegisterHandler }: Props) {
 
     const navigate = useNavigate();
 
@@ -23,15 +27,20 @@ export default function Register() {
 
         e.preventDefault();
 
+        // Create a user object
+
         const user: user = {
             userName: userName,
             password: password
         };
 
+        // Use the api to add the user object
+
         addUser(user, {
             onSuccess: () => {
                 localStorage.setItem('user', JSON.stringify(user));
                 navigate('/');
+                onRegisterHandler();
             }
         });
     };

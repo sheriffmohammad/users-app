@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar';
 import './Layout.scss'
-import menu from '../data/menu'
+
+type Menu = {
+    title: string,
+    src: string,
+    gap?: boolean,
+    path: string,
+    visible: boolean
+};
 
 type Props = {
     children: JSX.Element,
+    menu: Menu[],
 };
 
-const Layout = ({ children }: Props) => {
 
-    const [menuData, setMenuData] = useState(menu);
+const Layout = ({ children, menu }: Props) => {
 
     return (
         <div className='layout'>
 
             {/* Side bar */}
-            <Sidebar appName='Users App' appLogo='user' menu={menuData}></Sidebar>
+            <Sidebar appName='Users App' appLogo='user' menu={menu}></Sidebar>
 
             {/* Main Content */}
             <main>
