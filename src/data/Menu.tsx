@@ -5,12 +5,6 @@ import { menu } from "../classes/menu";
 
 export const guestMenu: menu[] = [
     {
-        title: 'Home',
-        src: 'home',
-        gap: true,
-        path: '/',
-    },
-    {
         title: 'Register',
         src: 'register',
         gap: true,
