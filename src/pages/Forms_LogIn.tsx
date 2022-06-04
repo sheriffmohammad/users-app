@@ -48,6 +48,7 @@ export default function Login({ onLoginHandler }: Props) {
             // Create a user object
 
             const user: user = {
+                id: 0,
                 userName: userName,
                 password: password
             };

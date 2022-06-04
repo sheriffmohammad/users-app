@@ -37,6 +37,7 @@ export default function Register({ onRegisterHandler }: Props) {
         // Create a user object
 
         const user: user = {
+            id: 0,
             userName: userName,
             password: password
         };
