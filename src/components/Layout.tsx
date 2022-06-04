@@ -1,18 +1,11 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar';
 import './Layout.scss'
-
-type Menu = {
-    title: string,
-    src: string,
-    gap?: boolean,
-    path: string,
-    visible: boolean
-};
+import { menu } from '../classes/menu';
 
 type Props = {
     children: JSX.Element,
-    menu: Menu[],
+    menu: menu[],
 };
 
 

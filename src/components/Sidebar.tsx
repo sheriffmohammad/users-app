@@ -1,19 +1,12 @@
 import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Sidebar.scss'
-
-type Menu = {
-    title: string,
-    src: string,
-    gap?: boolean,
-    path: string,
-    visible: boolean
-};
+import { menu } from '../classes/menu';
 
 type Props = {
     appName: string,
     appLogo: string,
-    menu: Menu[],
+    menu: menu[],
 };
 
 const Sidebar = ({ appName, appLogo, menu }: Props) => {
@@ -40,13 +33,11 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
             <ul>
                 {menu.map((item, index) => (
                     <Link key={index} to={`${item.path}`}>
-                        {
-                            item.visible &&
-                            <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
-                                <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />
-                                <span className={`${!open && 'hidden'}`}>{item.title}</span>
-                            </li>
-                        }
+
+                        <li className={`menu-item text-tertiary ${item.gap ? 'menu-item-gap' : ''}`}>
+                            <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />
+                            <span className={`${!open && 'hidden'}`}>{item.title}</span>
+                        </li>
                     </Link>
                 ))}
             </ul>

@@ -25,8 +25,6 @@ function App() {
   const onRegisterHandler = () => {
 
     setMenuData(userMenu);
-
-    console.log("MENU CHANGE");
   }
 
   return (

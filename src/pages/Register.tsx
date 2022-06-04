@@ -3,7 +3,7 @@ import './Register.scss'
 import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
 import { Navigate, useNavigate } from 'react-router-dom';
-import user from '../classes/user'
+import { user } from '../classes/user'
 
 type Props = {
     onRegisterHandler: () => void;
