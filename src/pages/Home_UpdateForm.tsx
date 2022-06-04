@@ -50,6 +50,8 @@ export default function Home_UpdateForm({ user }: Props) {
         // Store user data in local storage
 
         queryClient.invalidateQueries('users');
+        setUserName('');
+        setPassword('');
       }
 
     });
