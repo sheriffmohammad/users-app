@@ -1,0 +1,32 @@
+@import "../App.scss";
+
+.page-content {
+    align-items: start !important;
+}
+
+.user-cards-container {
+    display: flex;
+    overflow-x: scroll;
+    flex-grow: 1;
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.user-card {
+    background-color: $secondary;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1.5px solid $tertiary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $tertiary;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+}
+.icon {
+    @include icon-size;
+}

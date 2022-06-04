@@ -21,7 +21,7 @@
 }
 
 .logo {
-    width: 2rem;
+    @include icon-size;
 }
 .menu-icon {
     width: 1.5rem;

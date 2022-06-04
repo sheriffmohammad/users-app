@@ -6,6 +6,11 @@ $quaternary: #f1f5f9;
 $fontSize: 1rem;
 /*#endregion*/
 
+@mixin icon-size {
+    width: 2rem;
+    height: 2rem;
+}
+
 /*#region Generic App styles */
 * {
     box-sizing: border-box;
