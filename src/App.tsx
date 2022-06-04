@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import Layout from './components/Layout';
@@ -14,16 +14,23 @@ import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Page from './components/Page';
 import apiClient from "./api/apiClient";
-import menu from './data/menu'
+import { guestMenu, userMenu } from './data/menu'
 
 function App() {
 
-  const onRegisterHandler = () => { }
+  const [menuData, setMenuData] = useState(guestMenu);
+
+  const onRegisterHandler = () => {
+
+    setMenuData(userMenu);
+
+    console.log("MENU CHANGE");
+  }
 
   return (
 
     <BrowserRouter>
-      <Layout menu={menu}>
+      <Layout menu={menuData}>
         <Routes>
           <Route path='*' element={<Page pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
           <Route path="/" element={<App />} />

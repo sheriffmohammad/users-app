@@ -1,4 +1,4 @@
-let menu = [
+export const guestMenu = [
     {
         title: 'Home',
         src: 'home',
@@ -20,4 +20,13 @@ let menu = [
         visible: true
     }
 ];
-export default menu
+
+export const userMenu = [
+    {
+        title: 'Home',
+        src: 'home',
+        gap: true,
+        path: '/',
+        visible: true
+    }
+];

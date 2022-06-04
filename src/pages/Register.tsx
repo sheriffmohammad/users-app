@@ -4,7 +4,6 @@ import { useMutation } from 'react-query';
 import { useAddUserData } from '../helpers/httpHelper'
 import { Navigate, useNavigate } from 'react-router-dom';
 import user from '../classes/user'
-import menu from '../data/menu'
 
 type Props = {
     onRegisterHandler: () => void;
