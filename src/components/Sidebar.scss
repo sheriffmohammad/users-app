@@ -22,6 +22,7 @@
 
 .logo {
     @include icon-size;
+    transition-duration: 500ms;
 }
 .menu-icon {
     width: 1.5rem;
@@ -55,6 +56,11 @@
     padding: 0.5rem;
     border: 2px solid $tertiary;
 }
+html[dir="rtl"] > * .arrow {
+    left: -1rem;
+    right: unset;
+    transform: rotate(180deg) !important;
+}
 .open {
     width: 22rem;
 }
@@ -63,4 +69,9 @@
 }
 .rotate-180 {
     transform: rotate(180deg);
+}
+.logo-click{
+    transform: rotate(360deg);
+    margin-left: auto;
+    margin-right: auto;
 }

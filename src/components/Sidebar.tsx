@@ -29,10 +29,10 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
             <div className='side-bar-header'>
 
                 {/* App Logo */}
-                <img className={`logo ${!open && 'center-absolute'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
+                <img className={`logo ${!open && 'logo-click'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
 
                 {/* Title */}
-                <h2 className={`text-white header-title ${!open && 'scale-0'} `}>{t('Application.title')}</h2>
+                <h2 className={`text-white header-title ${!open && 'd-none'} `}>{t('Application.title')}</h2>
             </div>
 
             <div className='menu-item'>
