@@ -15,11 +15,6 @@
     align-items: center;
 }
 
-.header-title {
-    transform-origin: left;
-    transition-duration: 300ms;
-}
-
 .logo {
     @include icon-size;
     transition-duration: 500ms;

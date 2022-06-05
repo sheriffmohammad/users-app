@@ -32,7 +32,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 <img className={`logo ${!open && 'logo-click'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
 
                 {/* Title */}
-                <h2 className={`text-white header-title ${!open && 'd-none'} `}>{t('Application.title')}</h2>
+                <h2 className={`text-white ${!open && 'd-none'} `}>{t('Application.title')}</h2>
             </div>
 
             <div className='menu-item'>

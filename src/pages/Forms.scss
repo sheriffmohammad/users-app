@@ -55,6 +55,12 @@
     width: 50%;
 }
 
+html[dir="rtl"] > * .register .col-2 img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
 .register .col-2 img {
     width: 100%;
     height: 100%;
