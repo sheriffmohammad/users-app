@@ -23,7 +23,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
         <div className={'side-bar ' + `${open ? 'open' : 'closed'}`}>
 
             {/* Arrow */}
-            <img onClick={() => setOpen(!open)} src="/assets/icons/arrow.png" alt='' className={`arrow bg-quaternary ${!open && 'rotate-180'}`} />
+            <img onClick={() => setOpen(!open)} src="/assets/icons/arrow.png" alt='' className={`arrow ${!open && 'rotate-180'}`} />
 
             {/* Header */}
             <div className='side-bar-header'>
@@ -32,7 +32,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 <img className={`logo ${!open && 'logo-click'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
 
                 {/* Title */}
-                <h2 className={`text-white ${!open && 'd-none'} `}>{t('Application.title')}</h2>
+                <h2 className={`text-white ${!open && 'hidden'} `}>{t('Application.title')}</h2>
             </div>
 
             <div className='menu-item'>

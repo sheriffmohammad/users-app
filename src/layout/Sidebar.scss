@@ -50,6 +50,7 @@
     border-radius: 100%;
     padding: 0.5rem;
     border: 2px solid $tertiary;
+    background-color: $quaternary;
 }
 html[dir="rtl"] > * .arrow {
     left: -1rem;

@@ -34,7 +34,7 @@ const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
 
 
     return (
-        <div className="height-full">
+        <div className="h-full">
 
             {/* Conditionally render header based on preference */}
             {addHeader == true &&

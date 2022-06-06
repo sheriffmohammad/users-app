@@ -56,38 +56,7 @@ h1 {
 }
 /*#endregion */
 
-/*#region Background and text color using variables */
-.bg-primary {
-    background-color: $primary;
-}
-.bg-secondary {
-    background-color: $secondary;
-}
-.bg-tertiary {
-    background-color: $tertiary;
-}
-.bg-quaternary {
-    background-color: $quaternary;
-}
-.bg-white {
-    background-color: #fff;
-}
-.bg-black {
-    background-color: #000;
-}
-
-.text-primary {
-    color: $primary;
-}
-.text-secondary {
-    color: $secondary;
-}
-.text-tertiary {
-    color: $tertiary;
-}
-.text-quaternary {
-    color: $quaternary;
-}
+/*#region Commonly used text classes */
 .text-white {
     color: #fff;
 }
@@ -97,9 +66,6 @@ h1 {
 /*#endregion*/
 
 /*#region Commonly used styles*/
-.d-none {
-    display: none;
-}
 .hidden {
     display: none;
 }
@@ -107,12 +73,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
-.center-absolute {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.height-full {
+.h-full {
     height: 100%;
 }
 /*#endregion */
