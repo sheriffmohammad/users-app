@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Layout from './components/Layout';
+import Layout from './layout/Layout';
 import ReactDOM from "react-dom/client";
 import {
   BrowserRouter,
@@ -12,7 +12,7 @@ import Home from './pages/Home';
 import LogIn from './pages/Forms_LogIn';
 import Register from './pages/Forms_Register';
 import NotFound from './pages/NotFound';
-import Page from './components/Page';
+import Page from './layout/Page';
 import apiClient from "./api/apiClient";
 import { guestMenu, userMenu } from './data/menu'
 

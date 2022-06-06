@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Sidebar.scss'
 import { menu } from '../classes/menu';
 import { useTranslate } from '../translate';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 type Props = {
     appName: string,

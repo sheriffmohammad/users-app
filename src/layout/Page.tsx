@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import './Page.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useTranslate } from '../translate';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 import { t } from "../translate/translate";
 
 
