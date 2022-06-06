@@ -54,7 +54,7 @@
 html[dir="rtl"] > * .arrow {
     left: -1rem;
     right: unset;
-    transform: rotate(180deg) !important;
+    transform: rotate(180deg);
 }
 .open {
     width: 22rem;
@@ -65,7 +65,12 @@ html[dir="rtl"] > * .arrow {
 .rotate-180 {
     transform: rotate(180deg);
 }
-.logo-click{
+html[dir="rtl"] > * .rotate-180 {
+    left: -1rem;
+    right: unset;
+    transform: rotate(0deg);
+}
+.logo-click {
     transform: rotate(360deg);
     margin-left: auto;
     margin-right: auto;
