@@ -1,15 +1,4 @@
-/*#region Standard variables*/
-$primary: #0055bf;
-$secondary: #000e4f;
-$tertiary: #bcceff;
-$quaternary: #f1f5f9;
-$fontSize: 1rem;
-/*#endregion*/
-
-@mixin icon-size {
-    width: 2rem;
-    height: 2rem;
-}
+@import "./styles/main.scss";
 
 /*#region Generic App styles */
 * {
