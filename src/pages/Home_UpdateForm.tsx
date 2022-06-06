@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useQueryClient } from 'react-query';
 import { user } from '../shared/classes/user'
 import { useAddUserData, useEditUserData } from '../shared/helpers/httpHelper';
-import { useTranslate } from '../translate';
+import { useTranslate } from '../translation';
 
 type Props = {
   user: user

@@ -3,7 +3,7 @@ import './Forms.scss'
 import { useGetUsersData } from '../shared/helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
 import { user } from '../shared/classes/user'
-import { useTranslate } from '../translate';
+import { useTranslate } from '../translation';
 
 type Props = {
     onLoginHandler: () => void; // Used to change menu after successful login

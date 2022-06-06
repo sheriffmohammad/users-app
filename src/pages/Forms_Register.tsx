@@ -3,8 +3,8 @@ import './Forms.scss'
 import { useAddUserData } from '../shared/helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
 import { user } from '../shared/classes/user'
-import { t } from '../translate/translate';
-import { useTranslate } from '../translate';
+import { t } from '../translation/translate';
+import { useTranslate } from '../translation';
 
 type Props = {
     onRegisterHandler: () => void; // Used to change the menu after successful registration

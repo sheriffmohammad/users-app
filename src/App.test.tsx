@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import Home from './pages/Home';
-import { TranslateProvider } from './translate';
+import { TranslateProvider } from './translation';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { act } from 'react-dom/test-utils';
 

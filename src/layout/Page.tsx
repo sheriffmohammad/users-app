@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import './Page.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { useTranslate } from '../translate';
+import { useTranslate } from '../translation';
 import LanguageSwitcher from '../shared/components/LanguageSwitcher';
-import { t } from "../translate/translate";
+import { t } from "../translation/translate";
 
 
 type Props = {

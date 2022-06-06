@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Home_AllUsers from './Home_AllUsers'
 import Home_UpdateForm from './Home_UpdateForm'
 import { user } from '../shared/classes/user';
-import { useTranslate } from '../translate';
+import { useTranslate } from '../translation';
 
 export default function Home() {
 

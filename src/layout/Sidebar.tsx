@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Sidebar.scss'
 import { menu } from '../shared/classes/menu';
-import { useTranslate } from '../translate';
+import { useTranslate } from '../translation';
 import LanguageSwitcher from '../shared/components/LanguageSwitcher';
 
 type Props = {

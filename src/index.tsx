@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from "react-query";
-import { TranslateProvider } from './translate';
+import { TranslateProvider } from './translation';
 
 const queryClient = new QueryClient();
 
