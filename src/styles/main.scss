@@ -1,5 +1,7 @@
 @import "./variables.scss";
 
+/* Styles in this file will be applied across the entire app */
+
 /*#region Generic App styles */
 * {
     box-sizing: border-box;
@@ -114,12 +116,3 @@ h1 {
     height: 100%;
 }
 /*#endregion */
-
-/*#region Mixins*/
-@mixin push--auto {
-    margin: {
-        left: auto;
-        right: auto;
-    }
-}
-/*#endregion*/

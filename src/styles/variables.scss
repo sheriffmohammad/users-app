@@ -11,3 +11,10 @@ $fontSize: 1rem;
     width: 2rem;
     height: 2rem;
 }
+
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
