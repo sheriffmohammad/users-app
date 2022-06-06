@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.scss';
+import './styles/main.scss';
 import Layout from './layout/Layout';
 import ReactDOM from "react-dom/client";
 import {
