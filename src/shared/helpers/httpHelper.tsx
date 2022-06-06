@@ -1,7 +1,5 @@
-import axios from 'axios'
-import React from 'react'
-import { useQuery, useMutation, useQueryClient } from 'react-query';
-import apiClient from '../api/apiClient';
+import { useQuery, useMutation } from 'react-query';
+import apiClient from '../../api/apiClient';
 import { user } from '../classes/user'
 
 const getUsers = async () => {

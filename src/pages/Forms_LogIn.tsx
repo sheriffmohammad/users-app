@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Forms.scss'
-import { useGetUsersData } from '../helpers/httpHelper'
+import { useGetUsersData } from '../shared/helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
-import { user } from '../classes/user'
+import { user } from '../shared/classes/user'
 import { useTranslate } from '../translate';
 
 type Props = {

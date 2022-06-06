@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useQueryClient } from 'react-query';
-import { user } from '../classes/user';
-import Loader from '../components/Loader';
-import { useDeleteUserData, useGetUsersData } from '../helpers/httpHelper';
+import { user } from '../shared/classes/user';
+import Loader from '../shared/components/Loader';
+import { useDeleteUserData, useGetUsersData } from '../shared/helpers/httpHelper';
 import './Home.scss'
 
 type Props = {

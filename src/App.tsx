@@ -14,7 +14,7 @@ import Register from './pages/Forms_Register';
 import NotFound from './pages/NotFound';
 import Page from './layout/Page';
 import apiClient from "./api/apiClient";
-import { guestMenu, userMenu } from './data/menu'
+import { guestMenu, userMenu } from './shared/data/menu'
 
 function App() {
 

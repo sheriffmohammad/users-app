@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Forms.scss'
-import { useAddUserData } from '../helpers/httpHelper'
+import { useAddUserData } from '../shared/helpers/httpHelper'
 import { useNavigate } from 'react-router-dom';
-import { user } from '../classes/user'
+import { user } from '../shared/classes/user'
 import { t } from '../translate/translate';
 import { useTranslate } from '../translate';
 

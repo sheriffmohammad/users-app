@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Sidebar.scss'
-import { menu } from '../classes/menu';
+import { menu } from '../shared/classes/menu';
 import { useTranslate } from '../translate';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcher from '../shared/components/LanguageSwitcher';
 
 type Props = {
     appName: string,

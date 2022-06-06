@@ -6,7 +6,7 @@ import {
     useTranslate,
     useTranslateDispatch,
     useTranslateState
-} from '../translate';
+} from '../../translate';
 
 function LanguageSwitcher() {
     const { language } = useTranslateState(); // we get the current language

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar';
 import './Layout.scss'
-import { menu } from '../classes/menu';
+import { menu } from '../shared/classes/menu';
 
 type Props = {
     children: JSX.Element,
