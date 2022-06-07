@@ -4,6 +4,7 @@ import './Sidebar.scss'
 import { menu } from '../shared/classes/menu';
 import { useTranslate } from '../translation';
 import LanguageSwitcher from '../shared/components/LanguageSwitcher';
+import { getCurrentLanguage } from '../translation/translate';
 
 type Props = {
     appName: string,
@@ -46,7 +47,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
 
                         <li className={`menu-item ${item.gap ? 'menu-item-gap' : ''}`}>
                             <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />
-                            <span className={`${!open && 'hidden'}`}>{item.title}</span>
+                            <span className={`${!open && 'hidden'}`}>{getCurrentLanguage() === 'ar' ? item.arabicTitle : item.englishTitle}</span>
                         </li>
                     </Link>
                 ))}

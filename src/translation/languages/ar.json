@@ -1,6 +1,6 @@
 {
     "Application.title": "برنامج المستخدمين",
-    "Application.page": "صفحة ال",
+    "Application.page": "الصفحة",
     "Application.login": "تسجيل الدخول",
     "Application.userName": "اسم المستخدم",
     "Application.password": "كلمة السر",
@@ -13,5 +13,6 @@
     "Application.notLoggedIn": "لم يتم تسجيل الدخول",
     "Application.notLoggedOut": "تم تسجيل الدخول بالفعل",
     "Application.editing": "تعديل المستخدم: ",
+    "Application.home": "الرئيسية",
     "LanguageSwitcher.used": "اللغة المستخدمة"
 }

@@ -3,7 +3,7 @@ import './Page.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useTranslate } from '../translation';
 import LanguageSwitcher from '../shared/components/LanguageSwitcher';
-import { t } from "../translation/translate";
+import { getCurrentLanguage, t } from "../translation/translate";
 
 
 type Props = {
@@ -39,8 +39,8 @@ const Page = ({ pageTitle, children, addHeader, onLogOutHandler }: Props) => {
             {/* Conditionally render header based on preference */}
             {addHeader == true &&
                 <div className="page-header text-black">
-                    <h1>{pageTitle} {t('Application.page')}</h1>
-
+                    {getCurrentLanguage() === 'en' && <h1>{pageTitle} {t('Application.page')}</h1>}
+                    {getCurrentLanguage() === 'ar' && <h1>{t('Application.page')} {pageTitle}</h1>}
                     {user &&
                         <img onClick={logOut} className="icon" src="assets/icons/log-out.png" alt="" />
                     }

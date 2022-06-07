@@ -15,8 +15,13 @@ import NotFound from './pages/NotFound';
 import Page from './layout/Page';
 import apiClient from "./api/apiClient";
 import { guestMenu, userMenu } from './shared/data/menu'
+import { t } from './translation/translate';
+import { useTranslate } from './translation';
 
 function App() {
+
+  const i18n = useTranslate();
+  const { t } = i18n;
 
   const user = localStorage.getItem('user');
 
@@ -42,7 +47,7 @@ function App() {
         <Routes>
           <Route path='*' element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
           <Route path="/" element={<App />} />
-          <Route index element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Home' addHeader={true}><Home /></Page>} />
+          <Route index element={<Page onLogOutHandler={onLogOutHandler} pageTitle={t('Application.home')} addHeader={true}><Home /></Page>} />
           <Route path="log-in" element={<Page onLogOutHandler={onLogOutHandler} pageTitle="Log In" addHeader={false}><LogIn onLoginHandler={onLoginHandler} /></Page>} />
           <Route path="register" element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Registration' addHeader={false}><Register onRegisterHandler={onRegisterHandler} /></Page>} />
         </Routes>

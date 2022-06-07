@@ -1,17 +1,18 @@
-
 import { menu } from "../classes/menu";
 
 // Menu for guest users
 
 export const guestMenu: menu[] = [
     {
-        title: 'Register',
+        englishTitle: 'Register',
+        arabicTitle:'انشاء حساب',
         src: 'register',
         gap: true,
         path: '/register',
     },
     {
-        title: 'Log-In',
+        englishTitle: 'Log-In',
+        arabicTitle:'تسجيل الدخول',
         src: 'log-in',
         path: '/log-in',
     }
@@ -21,7 +22,8 @@ export const guestMenu: menu[] = [
 
 export const userMenu: menu[] = [
     {
-        title: 'Home',
+        englishTitle: 'Home',
+        arabicTitle:'الرئيسية',
         src: 'home',
         gap: true,
         path: '/',

@@ -1,5 +1,6 @@
 export type menu = {
-    title: string,
+    englishTitle: string,
+    arabicTitle: string,
     src: string,
     gap?: boolean,
     path: string,

@@ -13,6 +13,7 @@
     "Application.notLoggedIn": "User not logged in",
     "Application.notLoggedOut": "User logged in already",
     "Application.editing": "Editing user: ",
+    "Application.home": "Home",
     "LanguageSwitcher.used": "Lang selected:",
     "LanguageSwitcher.en": "English",
     "LanguageSwitcher.ar": "Arabic"
