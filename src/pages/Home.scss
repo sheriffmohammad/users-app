@@ -29,6 +29,15 @@
     column-gap: 1rem;
     margin-bottom: 1rem;
 }
+
+.user-clickable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $tertiary;
+    align-items: center;
+    column-gap: 1rem;
+}
 .icon {
     @include icon-size;
 }

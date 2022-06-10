@@ -63,19 +63,22 @@ export default function Home_AllUsers({ onEditUserHandler }: Props) {
             {/* Loop on all of the users */}
             {users.map((item: user, index) => (
 
-                <div onClick={() => onEditUserHandler(item)} className='user-card' key={index} >
+                <div className='user-card' key={index} >
+                    <div onClick={() => onEditUserHandler(item)} className='user-clickable'>
 
-                    {/* Username icon */}
-                    <img className='icon' src="assets/icons/user-name.png" alt="" />
+                        {/* Username icon */}
+                        <img className='icon' src="assets/icons/user-name.png" alt="" />
 
-                    {/* Username */}
-                    {item.userName}
+                        {/* Username */}
+                        {item.userName}
 
-                    {/* Password icon */}
-                    <img className='icon' src="assets/icons/password.png" alt="" />
+                        {/* Password icon */}
+                        <img className='icon' src="assets/icons/password.png" alt="" />
 
-                    {/* Password */}
-                    {item.password}
+                        {/* Password */}
+                        {item.password}
+                    </div>
+
 
                     {/* Delete button */}
                     <img onClick={() => onDeleteButtonClick(item.id)} className='icon' src="assets/icons/delete.png" alt="" />
