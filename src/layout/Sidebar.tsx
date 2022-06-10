@@ -14,9 +14,6 @@ type Props = {
 
 const Sidebar = ({ appName, appLogo, menu }: Props) => {
 
-    const i18n = useTranslate();
-    const { t } = i18n;
-
     const [open, setOpen] = useState(false);
 
     return (
@@ -33,7 +30,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                 <img className={`logo ${!open && 'logo-click'}`} src={`/assets/icons/${appLogo}.png`} alt='' />
 
                 {/* Title */}
-                <h2 className={`text-white ${!open && 'hidden'} `}>{t('Application.title')}</h2>
+                <h2 className={`text-white ${!open && 'hidden'} `}>{appName}</h2>
             </div>
 
             <div className='menu-item'>
