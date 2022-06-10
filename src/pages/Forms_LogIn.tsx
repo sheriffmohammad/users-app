@@ -11,6 +11,8 @@ type Props = {
 
 export default function Login({ onLoginHandler }: Props) {
 
+    // Translation
+
     const i18n = useTranslate();
     const { t } = i18n;
 
@@ -21,17 +23,22 @@ export default function Login({ onLoginHandler }: Props) {
 
     const [formErrors, setFormErrors] = useState({ errors: '' });
 
+    // Navigation
+
     const navigate = useNavigate();
 
     // Current user data (if any)
 
     const user = localStorage.getItem('user');
 
-    const { data, isSuccess, isLoading } = useGetUsersData();
+    const { data, isLoading } = useGetUsersData();
 
     // Check if input is valid
 
     const isValidInput = () => {
+
+        // If the username or the password are empty
+
         if (!userName.trim() || !password.trim()) {
             return false;
         }
@@ -114,6 +121,8 @@ export default function Login({ onLoginHandler }: Props) {
 
                     {/* Sign in form */}
                     <div className="col-1">
+
+                        {/* Form title*/}
                         <h2>{t('Application.login')}</h2>
 
                         <form id='form' className='flex flex-col'>
@@ -135,13 +144,13 @@ export default function Login({ onLoginHandler }: Props) {
 
                     </div>
 
-                    {/* Image */}
+                    {/* Form Image */}
                     <div className="col-2">
                         <img src='assets/images/bg-form-2.jpg' alt="" />
                     </div>
                 </div>}
 
-            {/* Else if the user is signed in don't allow him to register*/}
+            {/* Else if the user is signed in don't allow him to log-in*/}
             {user && <div>User already logged-in</div>}
         </div>
     )

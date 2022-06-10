@@ -6,7 +6,7 @@ import { useDeleteUserData, useGetUsersData } from '../shared/helpers/httpHelper
 import './Home.scss'
 
 type Props = {
-    onEditUserHandler: (user: user) => void; // Used to change the menu after successful registration
+    onEditUserHandler: (user: user) => void; // Used to pass the clicked user's data to the editing form
 };
 
 export default function Home_AllUsers({ onEditUserHandler }: Props) {

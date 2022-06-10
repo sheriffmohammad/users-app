@@ -45,10 +45,18 @@ function App() {
     <BrowserRouter>
       <Layout menu={menuData}>
         <Routes>
+
+          {/* Not found */}
           <Route path='*' element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Not Found' addHeader={false}><NotFound /></Page>} />
+
+          {/* Home */}
           <Route path="/" element={<App />} />
           <Route index element={<Page onLogOutHandler={onLogOutHandler} pageTitle={t('Application.home')} addHeader={true}><Home /></Page>} />
+
+          {/* Log-in */}
           <Route path="log-in" element={<Page onLogOutHandler={onLogOutHandler} pageTitle="Log In" addHeader={false}><LogIn onLoginHandler={onLoginHandler} /></Page>} />
+
+          {/* Register */}
           <Route path="register" element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Registration' addHeader={false}><Register onRegisterHandler={onRegisterHandler} /></Page>} />
         </Routes>
       </Layout>

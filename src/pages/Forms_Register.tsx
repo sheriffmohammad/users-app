@@ -12,6 +12,8 @@ type Props = {
 
 export default function Register({ onRegisterHandler }: Props) {
 
+    // Translation
+
     const i18n = useTranslate();
     const { t } = i18n;
 
@@ -27,13 +29,20 @@ export default function Register({ onRegisterHandler }: Props) {
 
     const user = localStorage.getItem('user');
 
-    const { mutate: addUser, data, isLoading } = useAddUserData();
+    // Use react-query on adding a new user
+
+    const { mutate: addUser, isLoading } = useAddUserData();
+
+    // Navigation
 
     const navigate = useNavigate();
 
     // Check if input is valid
 
     const isValidInput = () => {
+
+        // If any field is empty
+
         if (!userName.trim() || !password.trim() || !confirmPassword.trim()) {
             return false;
         }
@@ -123,6 +132,8 @@ export default function Register({ onRegisterHandler }: Props) {
 
                     {/* Registration form */}
                     <div className="col-1">
+
+                        {/* Form title */}
                         <h2>{t('Application.register')}</h2>
 
                         <form id='form' className='flex flex-col'>
@@ -148,7 +159,7 @@ export default function Register({ onRegisterHandler }: Props) {
 
                     </div>
 
-                    {/* Image */}
+                    {/* Form image */}
                     <div className="col-2">
                         <img src='assets/images/bg-form-2.jpg' alt="" />
                     </div>

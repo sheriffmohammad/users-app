@@ -10,6 +10,8 @@ type Props = {
 
 export default function Home_UpdateForm({ user }: Props) {
 
+  // Translation
+
   const i18n = useTranslate();
   const { t } = i18n;
 
@@ -17,16 +19,22 @@ export default function Home_UpdateForm({ user }: Props) {
 
   const queryClient = useQueryClient();
 
+  // Component states
+
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [formErrors, setFormErrors] = useState({ errors: '' });
 
+  // Use react-query on editing a user
 
-  const { mutate: editUser, data, isLoading } = useEditUserData();
+  const { mutate: editUser, isLoading } = useEditUserData();
 
   // Check if input is valid
 
   const isValidInput = () => {
+
+    // If the username or password are empty
+
     if (!userName.trim() || !password.trim()) {
       return false;
     }
@@ -34,7 +42,7 @@ export default function Home_UpdateForm({ user }: Props) {
       return true;
   }
 
-  // Get the users data once the component is rendered
+  // Get the user data once the component is rendered
 
   useEffect(() => {
     setUserName(user.userName);
@@ -98,6 +106,8 @@ export default function Home_UpdateForm({ user }: Props) {
 
         {/* Registration form */}
         <div className="col-1">
+
+          {/* Form title */}
           <h2>{t('Application.editing')} {user.userName}</h2>
 
           <form id='form' className='flex flex-col'>

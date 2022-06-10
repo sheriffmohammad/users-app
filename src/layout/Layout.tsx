@@ -11,6 +11,8 @@ type Props = {
 
 const Layout = ({ children, menu }: Props) => {
 
+    // Translation
+
     const i18n = useTranslate();
     const { t } = i18n;
 

@@ -2,6 +2,8 @@ import { useQuery, useMutation } from 'react-query';
 import apiClient from '../../api/apiClient';
 import { user } from '../classes/user'
 
+//#region Axios
+
 const getUsers = async () => {
     return await apiClient.get("/users");
 }
@@ -18,6 +20,10 @@ const editUser = async (user: user) => {
     return apiClient.put(`/users/${user.id}`, user)
 }
 
+//#endregion
+
+//#region react-query
+
 export const useGetUsersData = () => {
     return useQuery('users', getUsers)
 }
@@ -33,3 +39,5 @@ export const useDeleteUserData = () => {
 export const useEditUserData = () => {
     return useMutation((user: user) => (editUser(user)));
 }
+
+//#endregion
