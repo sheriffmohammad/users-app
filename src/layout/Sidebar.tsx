@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.scss'
 import { menu } from '../shared/classes/menu';
 import { useTranslate } from '../translation';
@@ -17,6 +17,10 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
     // State for toggling side bar
 
     const [open, setOpen] = useState(false);
+
+    // Router location
+
+    const location = useLocation();
 
     return (
 
@@ -46,7 +50,7 @@ const Sidebar = ({ appName, appLogo, menu }: Props) => {
                     <Link key={index} to={`${item.path}`}>
 
                         {/* Navigation item*/}
-                        <li className={`menu-item ${item.gap ? 'menu-item-gap' : ''}`}>
+                        <li className={`menu-item ${item.gap ? 'menu-item-gap' : ''} ${location.pathname === item.path ? 'menu-item-active' : ''}`}>
 
                             {/* Logo*/}
                             <img className={`menu-icon ${!open && 'center-h'}`} src={`/assets/icons/${item.src}.png`} alt='' />

@@ -1,5 +1,10 @@
 @import "../styles/variables.scss";
 
+@mixin active {
+    background-color: #3f4878;
+    color: white !important;
+}
+
 .side-bar {
     height: 100vh;
     background-color: $secondary;
@@ -34,8 +39,10 @@
     color: $tertiary;
 }
 .menu-item:hover {
-    background-color: #3f4878;
-    color: white !important;
+    @include active();
+}
+.menu-item-active {
+    @include active();
 }
 .menu-item-gap {
     margin-top: 3rem;
