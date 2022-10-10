@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { TranslateProvider } from './translation';
+
 
 const queryClient = new QueryClient();
 
