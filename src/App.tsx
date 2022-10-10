@@ -17,6 +17,7 @@ import apiClient from "./api/apiClient";
 import { guestMenu, userMenu } from './shared/data/menu'
 import { t } from './translation/translate';
 import { useTranslate } from './translation';
+import BootstrapPlayground from './pages/BootstrapPlayground';
 
 function App() {
 
@@ -58,6 +59,9 @@ function App() {
 
           {/* Register */}
           <Route path="register" element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Registration' addHeader={false}><Register onRegisterHandler={onRegisterHandler} /></Page>} />
+
+          {/* Bootstrap Playground */}
+          <Route path="bootstrap-playground" element={<Page onLogOutHandler={onLogOutHandler} pageTitle='Bootstrap Playground' addHeader={false}><BootstrapPlayground/></Page>} />
         </Routes>
       </Layout>
     </BrowserRouter>
