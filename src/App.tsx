@@ -15,6 +15,7 @@ import { t } from './translation/translate';
 import { useTranslate } from './translation';
 import Bootstrap from './pages/playgrounds/Bootstrap';
 import ReactTable from './pages/playgrounds/ReactTable';
+import ReactHookForm from './pages/playgrounds/ReactHookForm';
 
 function App() {
   const i18n = useTranslate();
@@ -113,9 +114,22 @@ function App() {
             element={
               <Page
                 onLogOutHandler={onLogOutHandler}
-                pageTitle='Bootstrap Playground'
+                pageTitle='React Table Playground'
                 addHeader={false}>
                 <ReactTable />
+              </Page>
+            }
+          />
+
+          {/*React Hook*/}
+          <Route
+            path='playgrounds/react-hook-form'
+            element={
+              <Page
+                onLogOutHandler={onLogOutHandler}
+                pageTitle='React Hook Playground'
+                addHeader={false}>
+                <ReactHookForm />
               </Page>
             }
           />
