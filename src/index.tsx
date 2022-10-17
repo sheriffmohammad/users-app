@@ -11,7 +11,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { TranslateProvider } from './translation';
-
+import { ChakraProvider } from '@chakra-ui/react'
 
 const queryClient = new QueryClient();
 
@@ -20,11 +20,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <ChakraProvider>
     <TranslateProvider>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
     </TranslateProvider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 

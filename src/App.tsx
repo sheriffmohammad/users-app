@@ -16,6 +16,7 @@ import { useTranslate } from './translation';
 import Bootstrap from './pages/playgrounds/Bootstrap';
 import ReactTable from './pages/playgrounds/ReactTable';
 import ReactHookForm from './pages/playgrounds/ReactHookForm';
+import ChakraUI from './pages/playgrounds/ChakraUI';
 
 function App() {
   const i18n = useTranslate();
@@ -130,6 +131,19 @@ function App() {
                 pageTitle='React Hook Playground'
                 addHeader={false}>
                 <ReactHookForm />
+              </Page>
+            }
+          />
+
+          {/*Chakra UI*/}
+          <Route
+            path='playgrounds/chakra-ui'
+            element={
+              <Page
+                onLogOutHandler={onLogOutHandler}
+                pageTitle='Chakra UI Playground'
+                addHeader={false}>
+                <ChakraUI />
               </Page>
             }
           />
