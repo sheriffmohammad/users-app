@@ -2,15 +2,10 @@ import React from "react";
 
 function Card({ imageName, title, description }: any) {
   return (
-    <div
-      className="card bg-light mb-3 p-0 shadow-sm rounded-1"
-      style={{
-        maxWidth: "18rem",
-      }}
-    >
+    <div className="col mx-2 card bg-light mb-3 p-0 shadow-sm rounded-1">
       <div className="p-0">
         <img
-          src={`assets/images/bootstrap-playground/${imageName}`}
+          src={`/assets/images/bootstrap-playground/${imageName}`}
           className="w-100 h-100"
         />
       </div>
@@ -24,11 +19,11 @@ function Card({ imageName, title, description }: any) {
   );
 }
 
-export default function BootstrapPlayground() {
+export default function Bootstrap() {
   return (
-    <div className="w-100 px-4">
+    <div className="container px-4">
       <h2 className="text-center fw-bold">Shop</h2>
-      <div className="row justify-content-between g-0 mt-5">
+      <div className="row mt-5">
         <Card
           imageName="1.jpg"
           title="GeForce RTX® Graphics Cards and Desktops"
@@ -68,7 +63,11 @@ export default function BootstrapPlayground() {
           title="NVIDIA DLSS 3"
           description="New games this month."
         ></Card>
-        <Card imageName="8.jpg" title="Frames Win Games" description="NVIDIA Reflex Available Now."></Card>
+        <Card
+          imageName="8.jpg"
+          title="Frames Win Games"
+          description="NVIDIA Reflex Available Now."
+        ></Card>
       </div>
     </div>
   );
